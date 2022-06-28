@@ -60,3 +60,21 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#It lets you create pretty URLs and work with human-friendly strings as if they were numeric ids.
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+
+
+# The basics
+# for responsive <div>‘s, i.e., jumbotrons that automatically scale according to various page widths
+gem 'bootstrap-sass', '~> 3.3.4'
+
+# for icons like fa-fa-bars and checkmarks
+gem 'font-awesome-sass', '~> 4.3.0'
+
+# for additional JavaScript effects such as ToggleClass
+gem 'jquery-ui-rails'
+
+# for standard social icons (think Facebook and Twitter icons)
+gem 'bootstrap-social-rails'
+#
