@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "residential", to: "pages#residential"
   get "commercial", to: "pages#commercial"
   get "quote", to: "pages#quote"
+  get "index", to: "pages#index"
  end
