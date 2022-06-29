@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(e) {
-    console.log('fully loaded')
 
     const choice = document.getElementById("building-type");
     choice.addEventListener("change", (e) => {
