@@ -7,7 +7,7 @@ ruby '2.7.6'
 gem 'rails', '~> 5.2.8'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-# Use Puma as the app server
+# Use Puma as the app server.
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -62,3 +62,23 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+#It lets you create pretty URLs and work with human-friendly strings as if they were numeric ids.
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+
+
+# The basics
+# for responsive <div>‘s, i.e., jumbotrons that automatically scale according to various page widths
+gem 'bootstrap-sass', '~> 3.3.4'
+
+# for icons like fa-fa-bars and checkmarks
+gem 'font-awesome-sass', '~> 4.3.0'
+
+# for additional JavaScript effects such as ToggleClass
+gem 'jquery-ui-rails'
+
+# for standard social icons (think Facebook and Twitter icons)
+gem 'bootstrap-social-rails'
+
+#
+gem "jquery"
+

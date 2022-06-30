@@ -7,15 +7,180 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <script>
+        var plugin_path = 'assets/plugins/';
+    </script>
+
+    <%= favicon_link_tag 'favicon.ico' %>
+    
+    <script>
+        var plugin_path = 'assets/plugins/';
+    </script>
+
+
   </head>
 
-  <body>
+
+  
+  <body class="smoothscroll enable-animation">
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+    <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+        <!-- TOP NAV -->
+        <header id="topNav">
+            <div class="container">
+
+                <!-- Mobile Menu Button -->
+                <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                <!-- Logo -->
+                <a class="logo float-left scrollTo">
+                    <%= image_tag "R2.png" %>
+                </a>
+
+                <!-- 
+                        Top Nav 
+                        
+                        AVAILABLE CLASSES:
+                        submenu-dark = dark sub menu
+                    -->
+                <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                    <nav class="nav-main">
+
+                        <!-- 
+                                .nav-onepage
+                                Required for onepage navigation links
+                                
+                                Add .external for an external link!
+                            -->
+                        <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+                            <li class="active">
+                                <!-- HOME -->
+                                <a href="#">
+                                        HOME
+                                    </a>
+                            </li>
+                            <li class="dropdown">
+                                <!-- services -->
+                                <a class="dropdown-toggle" href="#">
+                                        SERVICES
+                                    </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="residential.html">Residential</a></li>
+                                    <li><a href="commercial.html">Commercial</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <!-- PORTFOLIO-->
+                                <a href="#portfolio">
+                                        PORTFOLIO
+                                    </a>
+                            </li>
+                            <li>
+                                <!-- NEWS -->
+                                <a href="#news">
+                                        NEWS
+                                    </a>
+                            </li>
+
+                            <li>
+                                <!-- CLIENTS -->
+                                <a href="#clients">
+                                    CLIENTS
+                                </a>
+                            </li>
+                            <li>
+                                <!-- CONTACT -->
+                                <a href="#contact">
+                                        CONTACT
+                                    </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+        <!-- /Top Nav -->
+
+    </div>
+
     <%= yield %>
+    
+    <footer id="footer">
+        <div class="container">
+
+
+            <div class="row">
+
+                <!-- col #1 -->
+                <div class="col-md-8">
+
+                    <h3 class="letter-spacing-1">WHY US?</h3>
+
+                    <!-- Small Description -->
+                    <p>
+                        Rocket Elevators is the leading manufacturer of elevator systems. The developments made by Muxx allowed the construction of skyscrapers equipped with safe elevator systems. Muxx has installed elevators in several of the most famous buildings such as the
+                        Eiffel Tower, the Empire State Building, the World Trade Center, The Twilight Zone Tower of Terror, The Petronas Twin Towers, and the Burj Khalifa. In the commercial sphere in Spain, Muxx has worked for the main hotel chains.<br/>                            We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
+
+                    </p>
+                    <h2>(418) 555-1234</h2>
+                </div>
+                <!-- /col #1 -->
+
+                <!-- col #2 -->
+                <div class="col-md-4">
+                    <h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+                    <!-- Newsletter Form -->
+                    <p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+                    <form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /Newsletter Form -->
+
+
+                </div>
+                <!-- /col #2 -->
+
+            </div>
+
+
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <ul class="float-right m-0 list-inline mobile-block">
+                    <li><a>Terms &amp; Conditions</a></li>
+                    <li>&bull;</li>
+                    <li><a>Privacy</a></li>
+                </ul>
+                &copy; All Rights Reserved, Rocket Elevators Inc
+            </div>
+        </div>
+
+    </footer>
+
+
   </body>
 </html>
