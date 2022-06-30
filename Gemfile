@@ -77,4 +77,7 @@ gem 'jquery-ui-rails'
 
 # for standard social icons (think Facebook and Twitter icons)
 gem 'bootstrap-social-rails'
+
 #
+gem "jquery"
+
