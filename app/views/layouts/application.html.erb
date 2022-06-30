@@ -5,8 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     
     <meta charset="utf-8" />
     <meta name="description" content="" />
@@ -68,9 +70,7 @@
                         <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
                             <li class="active">
                                 <!-- HOME -->
-                                <a href="#">
-                                        HOME
-                                    </a>
+                                <%= link_to "HOME", root_path, 'data-turbolinks': false %>
                             </li>
                             <li class="dropdown">
                                 <!-- services -->
@@ -78,8 +78,8 @@
                                         SERVICES
                                     </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="residential.html">Residential</a></li>
-                                    <li><a href="commercial.html">Commercial</a></li>
+                                    <li><%= link_to "Residential", residential_path, 'data-turbolinks': false %></li>
+                                    <li><%= link_to "Commercial", commercial_path, 'data-turbolinks': false %></li>
                                 </ul>
                             </li>
                             <li>
@@ -106,6 +106,12 @@
                                 <a href="#contact">
                                         CONTACT
                                     </a>
+                            </li>
+                            <li>
+                                <!-- LOG IN -->
+                                <a href="#">
+                                        LOG IN
+                                </a>
                             </li>
                         </ul>
 
