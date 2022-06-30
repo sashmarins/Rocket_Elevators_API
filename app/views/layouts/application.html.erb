@@ -25,7 +25,15 @@
 
   </head>
 
+
+  
   <body class="smoothscroll enable-animation">
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
     <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
         <!-- TOP NAV -->
