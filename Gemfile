@@ -82,3 +82,8 @@ gem 'bootstrap-social-rails'
 #
 gem "jquery"
 
+#railsadmin
+gem 'rails_admin', '~> 2.0'
+
+
+
