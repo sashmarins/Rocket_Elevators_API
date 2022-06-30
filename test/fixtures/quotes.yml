@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_of_elevators: 1
+  amount_of_floors: 1
+  final_price: 1
+  building_type: MyString
+  elevator_type: MyString
+  installation_price: 1
+
+two:
+  amount_of_elevators: 1
+  amount_of_floors: 1
+  final_price: 1
+  building_type: MyString
+  elevator_type: MyString
+  installation_price: 1
