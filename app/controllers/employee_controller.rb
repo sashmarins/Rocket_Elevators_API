@@ -3,7 +3,7 @@ class EmployeeController < ApplicationController
     load_and_authorize_resource
 end
 
-def show
-    @admin = Admin.find(params[:id])
-    authorize! :show, @admin
-  end
+# def show
+#     @admin = Admin.find(params[:id])
+#     authorize! :show, @admin
+#   end
