@@ -90,5 +90,14 @@ gem 'bootstrap-social-rails'
 #
 gem "jquery"
 
+#railsadmin
+gem 'rails_admin', '~> 2.0'
+
+#ACCESS GRANTED
+
+gem 'access-granted', '~> 1.3', '>= 1.3.3'
+
+#CANCANCAN
+gem 'cancancan', '~> 3.4'
 
 
