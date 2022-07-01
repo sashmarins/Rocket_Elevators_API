@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "commercial", to: "pages#commercial"
   get "quote", to: "pages#quote"
   get "index", to: "pages#index"
+
+  resources :quotes
  end
