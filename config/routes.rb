@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get "quote", to: "pages#quote"
   get "index", to: "pages#index"
 
-  resources :quotes
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
+  resources :quotes
+  
  end
