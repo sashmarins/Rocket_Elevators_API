@@ -10,11 +10,105 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_05_001642) do
+ActiveRecord::Schema.define(version: 2022_07_05_144501) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "address_type"
+    t.string "address_status"
+    t.string "entity"
+    t.string "street_address"
+    t.string "suite_or_apartment"
+    t.string "city"
+    t.integer "postal_code"
+    t.string "country"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "building_id", null: false
+    t.string "building_type"
+    t.string "battery_status"
+    t.string "date_of_commission"
+    t.string "last_inspection_date"
+    t.string "operations_certificate"
+    t.text "info"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["building_id"], name: "index_batteries_on_building_id"
+  end
+
+  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "building_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["building_id"], name: "index_building_details_on_building_id"
+  end
+
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.string "address"
+    t.string "building_admin_name"
+    t.string "building_admin_email"
+    t.integer "building_admin_phone"
+    t.string "building_tech_name"
+    t.string "building_tech_email"
+    t.integer "building_tech_phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_buildings_on_customer_id"
+  end
+
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "battery_id", null: false
+    t.integer "number_of_floors_served"
+    t.string "column_status"
+    t.text "info"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["battery_id"], name: "index_columns_on_battery_id"
+  end
+
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "address_id", null: false
+    t.string "company_name"
+    t.string "address"
+    t.string "customer_created_date"
+    t.string "contact_name"
+    t.integer "phone_number"
+    t.string "email"
+    t.text "company_description"
+    t.string "service_tech_name"
+    t.integer "service_tech_phone"
+    t.string "service_tech_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_customers_on_address_id"
+    t.index ["user_id"], name: "index_customers_on_user_id"
+  end
+
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "column_id", null: false
+    t.integer "serial_number"
+    t.string "elevator_model"
+    t.string "elevator_status"
+    t.string "elevator_commission_date"
+    t.string "elevator_last_inspection_date"
+    t.string "elevator_inspection_certificate"
+    t.text "info"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["column_id"], name: "index_elevators_on_column_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -68,5 +162,12 @@ ActiveRecord::Schema.define(version: 2022_07_05_001642) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "batteries", "buildings"
+  add_foreign_key "building_details", "buildings"
+  add_foreign_key "buildings", "customers"
+  add_foreign_key "columns", "batteries"
+  add_foreign_key "customers", "addresses"
+  add_foreign_key "customers", "users"
+  add_foreign_key "elevators", "columns"
   add_foreign_key "employees", "users"
 end

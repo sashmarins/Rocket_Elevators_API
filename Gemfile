@@ -107,4 +107,6 @@ gem "image_processing", ">= 1.2"
 gem 'pg', '~> 1.4', '>= 1.4.1'
 
 
+#FAKER 
+gem 'faker', '~> 2.21'
 
