@@ -103,3 +103,8 @@ gem 'cancancan', '~> 3.4'
 #attachment
 gem "image_processing", ">= 1.2"
 
+#postgres
+gem 'pg', '~> 1.4', '>= 1.4.1'
+
+
+
