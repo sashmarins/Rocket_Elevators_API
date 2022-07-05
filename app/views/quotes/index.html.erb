@@ -1,0 +1,17 @@
+<h1>Listing Quotes</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @quotes.each do |quote| %>
+    <tr>
+      <td><%= quote.title %></td>
+      <td><%= quote.text %></td>
+      <td><%= link_to 'Show', quote_path(quote) %></td>
+    </tr>
+  <% end %>
+</table>
