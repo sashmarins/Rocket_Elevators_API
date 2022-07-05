@@ -100,4 +100,6 @@ gem 'access-granted', '~> 1.3', '>= 1.3.3'
 #CANCANCAN
 gem 'cancancan', '~> 3.4'
 
+#attachment
+gem "image_processing", ">= 1.2"
 

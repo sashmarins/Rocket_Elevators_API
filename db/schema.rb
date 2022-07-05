@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_01_152618) do
+ActiveRecord::Schema.define(version: 2022_07_05_001642) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "role_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,12 +27,26 @@ ActiveRecord::Schema.define(version: 2022_07_01_152618) do
     t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "name"
+    t.string "company_name"
+    t.string "email"
+    t.string "phone"
+    t.string "project_name"
+    t.string "project_description"
+    t.string "department"
+    t.string "message"
+    t.binary "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "amount_of_elevators", null: false
-    t.integer "amount_of_floors", null: false
-    t.integer "final_price"
-    t.string "building_type", null: false
-    t.string "elevator_type", null: false
+    t.integer "amount_of_elevators"
+    t.integer "amount_of_floors"
+    t.string "final_price"
+    t.string "building_type"
+    t.string "elevator_type"
     t.integer "installation_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
