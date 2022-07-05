@@ -17,17 +17,35 @@ user8 = User.create!(is_admin: true, email: 'kiril.kleinerman@codeboxx.biz', com
 user9 = User.create!(is_admin: true, email: 'felicia.hartono@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123')
 user10 = User.create!(is_admin: true, email: 'eileen.ai@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123')
 
-employee1 = user1.create_employee!(first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher') #example
+# employee1 = user1.Employee.create!(first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher')
+# employee2 = user2.Employee.create!(first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
+# employee3 = user3.Employee.create!(first_name: 'Francis', last_name: 'Patry-Jessop', title: 'Captain')
+# employee4 = user4.Employee.create!(first_name: 'David', last_name: 'Amyot', title: 'The Man')
+# employee5 = user5.Employee.create!(first_name: 'Marie-Ève', last_name: 'Goupil', title: 'AI Master')
+# employee6 = user6.Employee.create!(first_name: 'François', last_name: 'Boivin', title: 'The Tank')
+# employee7 = user7.Employee.create!(first_name: 'Timothy', last_name: 'Wever', title: 'Beard Whisperer')
+# employee8 = user8.Employee.create!(first_name: 'Kiril', last_name: 'Kleinerman', title: 'I <3 Winnipeg')
+# employee9 = user9.Employee.create!(first_name: 'Felicia', last_name: 'Hartono', title: 'Scrums are too early')
+# employee10 = user10.Employee.create!(first_name: 'Eileen', last_name: 'Ai', title: 'They really are.')
+
+# def create_employee 
+#     Employee.create!(employee_params)
+# end
+
+# private 
+#     def employee_params
+#         params.fetch( :employee, {})
+#     end
 
 Employee.create!(:user_id => 1, first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher')
-Employee.create!(user_id: 2, first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
-Employee.create!(user_id: 3, first_name: 'Francis', last_name: 'Patry-Jessop', title: 'Captain')
-Employee.create!(user_id: 4, first_name: 'David', last_name: 'Amyot', title: 'The Man')
-Employee.create!(user_id: 5, first_name: 'Marie-Ève', last_name: 'Goupil', title: 'AI Master')
-Employee.create!(user_id: 6, first_name: 'François', last_name: 'Boivin', title: 'The Tank')
-Employee.create!(user_id: 7, first_name: 'Timothy', last_name: 'Wever', title: 'Beard Whisperer')
-Employee.create!(user_id: 8, first_name: 'Kiril', last_name: 'Kleinerman', title: 'I <3 Winnipeg')
-Employee.create!(user_id: 9, first_name: 'Felicia', last_name: 'Hartono', title: 'Scrums are too early')
-Employee.create!(user_id: 10, first_name: 'Eileen', last_name: 'Ai', title: 'They really are.')
+Employee.create!(:user_id => 2, first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
+Employee.create!(:user_id => 3, first_name: 'Francis', last_name: 'Patry-Jessop', title: 'Captain')
+Employee.create!(:user_id => 4, first_name: 'David', last_name: 'Amyot', title: 'The Man')
+Employee.create!(:user_id => 5, first_name: 'Marie-Ève', last_name: 'Goupil', title: 'AI Master')
+Employee.create!(:user_id => 6, first_name: 'François', last_name: 'Boivin', title: 'The Tank')
+Employee.create!(:user_id => 7, first_name: 'Timothy', last_name: 'Wever', title: 'Beard Whisperer')
+Employee.create!(:user_id => 8, first_name: 'Kiril', last_name: 'Kleinerman', title: 'I <3 Winnipeg')
+Employee.create!(:user_id => 9, first_name: 'Felicia', last_name: 'Hartono', title: 'Scrums are too early')
+Employee.create!(:user_id => 10, first_name: 'Eileen', last_name: 'Ai', title: 'They really are.')
 # User.delete_all
 

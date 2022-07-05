@@ -103,3 +103,6 @@ gem 'cancancan', '~> 3.4'
 #attachment
 gem "image_processing", ">= 1.2"
 
+#FAKER 
+gem 'faker', '~> 2.21'
+
