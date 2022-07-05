@@ -20,7 +20,8 @@ class QuotesController < ApplicationController
 
     private
         def quote_params
-            params.require(:quote).permit(:title, :text) 
+            params.require(:quote).permit(:amount_of_elevators, :amount_of_floors, :final_price, :building_type, :elevator_type, :installation_price) #?????
+            params.fetch(:quote, {})
         end
 
 end
