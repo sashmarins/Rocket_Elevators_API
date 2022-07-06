@@ -4,7 +4,7 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: maksymkryvoshlyk
+  username: mac2
   password:
 
 development:
@@ -20,7 +20,7 @@ production:
   <<: *default
   database: postgres
   url:  <%= ENV["DATABASE_PG_URL"] %>
-  username: maksymkryvoshlyk
+  username: mac2
   password: 
 
 #PG added to database name

@@ -6,7 +6,7 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.string :final_price
       t.string :building_type
       t.string :elevator_type
-      t.integer :installation_price
+      t.string :installation_price
 
       t.timestamps
     end

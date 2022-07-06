@@ -1,4 +1,8 @@
 require 'pg'
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 task spec: ["pg:db:test:prepare"]
 
 namespace :pg do
@@ -73,6 +77,7 @@ namespace :pg do
     Rails.application.config.paths['config/database'] = ["config/database_pg.yml"]
   end
 
+<<<<<<< HEAD
   task :revert_to_original_config do
     # reset config variables to original values
     ENV['SCHEMA'] = @original_config[:env_schema]
@@ -103,3 +108,12 @@ namespace :pg do
 
 
 end
+=======
+    task :revert_to_original_config do
+      # reset config variables to original values
+      ENV['SCHEMA'] = @original_config[:env_schema]
+      Rails.application.config = @original_config[:config]
+    end
+
+  end
+>>>>>>> main
