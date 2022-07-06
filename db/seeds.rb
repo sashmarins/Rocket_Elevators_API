@@ -62,29 +62,46 @@ Lead.populate 500 do |l|
     l.project_description = Faker::Marketing.buzzwords
     l.department = Faker::Job.field
     l.message = Faker::IndustrySegments.industry
-    l.attachment =  Faker::Company.logo
-    # date time created & updated
+    l.attachment = Faker::Company.logo
+    l.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    l.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
 end
 
 # Address.populate 500 do |a|
-#     # address_type
-#     # address status
-#     #entity
-#     a.address
+#     a.address_type = random_address_type
+#     a.address_status = random_address_status
+#     a.entity = random_address_entity
+#     a.street_address
+#     a.suite_or_apartment = ["Suite", "Apartment"].sample(1)
+#     a.city
+#     a.postal_code
+#     a.country
+#     a.notes = Faker::Quote.matz
+#     a.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+#     a.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
 # end
 
-# Customers.populate 500 do |cu|
-#     # user id
-#     # address id
-#     cu.company_name = Faker::Company.name
-#     #adress
-#     # customer created date
-#     cu.contact_name = Faker::FunnyName.name
+customers = Customer.populate 500 do |cu|
+    # user id
+    # address id
+    cu.company_name = Faker::Company.name
+    #adress
+    cu.customer_created_date = Faker::Date.between(from: '1999-02-20', to: cu.created_at)
+    cu.contact_name = Faker::FunnyName.name
+    cu.phone_number = Faker::PhoneNumber.cell_phone
+    cu.email = Faker::Internet.free_email
+    cu.company_description = Faker::Company.industry
+    cu.service_tech_name = Faker::Name.name
+    cu.service_tech_phone = Faker::PhoneNumber.cell_phone
+    cu.service_tech_email = Faker::Internet.free_email
+    cu.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    cu.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+    # index_customers_on_address_id
+    # index_customers_on_user_id
+end
 
-# end
-
-Buildings.populate 500 do |bu|
-    #customer id
+Building.populate 500 do |bu|
+    bu.customer_id = customers.id
     # Address of the building (In the address table)
     bu.building_admin_name = Faker::Name.name 
     bu.building_admin_email = Faker::Internet.free_email
@@ -92,19 +109,19 @@ Buildings.populate 500 do |bu|
     bu.building_tech_name = Faker::Name.name
     bu.building_tech_email = Faker::Internet.free_email
     bu.building_tech_phone = Faker::PhoneNumber.cell_phone
-    # created_at
-    # updated_at
+    bu.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    bu.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
     # customer_id index_buildings_on_customer_id
 end
 
-BuildingDetails.populate 500 do |bud|
+BuildingDetail.populate 500 do |bud|
     # bud.building_id
-    # bud.created_at
-    # bud.updated_at
+    bud.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    bud.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
     # index_batteries_on_building_id
 end
 
-Batteries.populate 500 do |ba|
+Battery.populate 500 do |ba|
     # ba.building_id
     # ba.building_type
     # battery_status
@@ -113,43 +130,54 @@ Batteries.populate 500 do |ba|
     # operations_certificate
     ba.info = Faker::Quote.famous_last_words
     ba.notes = Faker::Quote.matz
-    # created_at
-    # updated_at
+    ba.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    ba.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
     # index_batteries_on_building_id
 end
 
 Columns.populate 500 do |co|
     # co.battery_id
     # number_of_floors_served
-    # column_status
+    co.column_status = random_column_status
     co.info = Faker::Quote.famous_last_words
     co.notes = Faker::Quote.matz
-    # created_at
-    # updated_at
+    co.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    co.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
     # index_columns_on_battery_id
 end
 
-Elevators.populate 500 do |e|
+Elevator.populate 500 do |e|
     # e.column_id
     e.serial_number = Faker::IDNumber.chilean_id
-    # elevator_model
-    # elevator_status
+    e.elevator_model = random_elevator_type
+    e.elevator_status = random_elevator_status
     # elevator_commission_date
     # elevator_last_inspection_date
+    e.elevator_inspection_certificate = random_battery_certificate
+    e.info = Faker::Quote.famous_last_words
+    e.notes = Faker::Quote.matz
+    e.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    e.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+    # index_elevators_on_column_id
 end
 
+User.populate 500 do |u|
+    u.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
+    u.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+    u.email = Faker::Internet.free_email
+end
 
-e.type ["standard", "Premium", "Excelium"].sample(1)
+# e.type ["standard", "Premium", "Excelium"].sample(1)
 
 def random_elevator_type
     elevator_type_random = rand(3)
     random_type_elevator = ""
     if elevator_type_random == 0 
-        random_elevator_type = "Standard"
+        random_type_elevator = "Standard"
     elsif elevator_type_random == 1
-        random_elevator_type = "Premium"
+        random_type_elevator = "Premium"
     elsif elevator_type_random == 2 
-        random_elevator_type = "Excelium"
+        random_type_elevator = "Excelium"
     end
     return random_type_elevator
 end
@@ -166,7 +194,7 @@ def random_battery_status
     elsif battery_status_random == 3 
         random_status_battery = "Active"
     end
-    return random_battery_status
+    return random_status_battery
 end
 
 def random_elevator_status
