@@ -51,7 +51,6 @@ Employee.create!(:user_id => user10.id, first_name: 'Eileen', last_name: 'Ai', t
 puts "finshed seeding employees"
 # User.delete_all
 
-<<<<<<< HEAD
 require_relative '../lib/populator_fix.rb'
 
 Lead.populate 500 do |l|
@@ -138,10 +137,6 @@ Elevators.populate 500 do |e|
     # elevator_commission_date
     # elevator_last_inspection_date
 end
-
-
-
-=======
 
 
 e.type ["standard", "Premium", "Excelium"].sample(1)
@@ -265,4 +260,3 @@ end
 
 
     
->>>>>>> main
