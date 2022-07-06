@@ -5,10 +5,7 @@
 #
 #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create!(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
 
-=======
->>>>>>> main
 puts "seeding users"
 user1 = User.create!(is_admin: true, email: 'mathieu.houde@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123') 
 user2 = User.create!(is_admin: true, email: 'patrick.thibault@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123') 
@@ -21,7 +18,6 @@ user8 = User.create!(is_admin: true, email: 'kiril.kleinerman@codeboxx.biz', com
 user9 = User.create!(is_admin: true, email: 'felicia.hartono@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123')
 user10 = User.create!(is_admin: true, email: 'eileen.ai@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123')
 puts "finished seeding users"
-<<<<<<< HEAD
 # employee1 = user1.Employee.create!(first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher')
 # employee2 = user2.Employee.create!(first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
 # employee3 = user3.Employee.create!(first_name: 'Francis', last_name: 'Patry-Jessop', title: 'Captain')
@@ -41,8 +37,6 @@ puts "finished seeding users"
 #     def employee_params
 #         params.fetch( :employee, {})
 #     end
-=======
->>>>>>> main
 puts "seeding employees"
 Employee.create!(:user_id => user1.id, first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher')
 Employee.create!(:user_id => user2.id, first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
@@ -56,6 +50,10 @@ Employee.create!(:user_id => user9.id, first_name: 'Felicia', last_name: 'Harton
 Employee.create!(:user_id => user10.id, first_name: 'Eileen', last_name: 'Ai', title: 'They really are.')
 puts "finshed seeding employees"
 # User.delete_all
+
+
+
+e.type ["standard", "Premium", "Excelium"].sample(1)
 
 def random_elevator_type
     elevator_type_random = rand(3)
@@ -71,7 +69,7 @@ def random_elevator_type
 end
 
 def random_battery_status
-    battery_status_random = rand(3)
+    battery_status_random = rand(4)
     random_status_battery = ""
     if battery_status_random == 0
         random_status_battery = "Active"
@@ -79,6 +77,8 @@ def random_battery_status
         random_status_battery = "Inactive"
     elsif battery_status_random == 2
         random_status_battery = "Intervention"
+    elsif battery_status_random == 3 
+        random_status_battery = "Active"
     end
     return random_battery_status
 end
