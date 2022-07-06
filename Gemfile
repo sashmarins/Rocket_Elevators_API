@@ -106,3 +106,6 @@ gem "image_processing", ">= 1.2"
 #FAKER 
 gem 'faker', '~> 2.21'
 
+#POPULATOR
+gem 'populator', '~> 1.0'
+
