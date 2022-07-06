@@ -1,6 +1,8 @@
+require 'pg'
 task spec: ["pg:db:test:prepare"]
 
 namespace :pg do
+   desc "Manage database"
 
   namespace :db do |ns|
 
@@ -24,7 +26,7 @@ namespace :pg do
       Rake::Task["db:rollback"].invoke
     end
 
-    task :seed do
+    task :seed do 
       Rake::Task["db:seed"].invoke
     end
 
@@ -76,4 +78,28 @@ namespace :pg do
     ENV['SCHEMA'] = @original_config[:env_schema]
     Rails.application.config = @original_config[:config]
   end
+
+  
+
+  desc 'Say hello!'
+  task :hello_world do
+  puts "Hello DUDEEEEEES"
+  end
+
+
+  #Output a table of current connections to the DB
+  conn = PG.connect( dbname: 'postgres' )
+  conn.exec( "SELECT * FROM quotes" ) do |result|
+    puts "     PID | User             | Query"
+    result.each do |row|
+      puts " %7d | %-16s | %s " %
+        row.values_at('pid', 'usename', 'query')
+    end
+  end
+
+  task :seed => :enviroment do 
+    Dir.glob("#{Rails.root}/db/scheema.rb").each { |t| require t }
+  end
+
+
 end
