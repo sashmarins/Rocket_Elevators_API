@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create!(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 puts "seeding users"
 user1 = User.create!(is_admin: true, email: 'mathieu.houde@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123') 
 user2 = User.create!(is_admin: true, email: 'patrick.thibault@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123') 
@@ -18,6 +21,7 @@ user8 = User.create!(is_admin: true, email: 'kiril.kleinerman@codeboxx.biz', com
 user9 = User.create!(is_admin: true, email: 'felicia.hartono@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123')
 user10 = User.create!(is_admin: true, email: 'eileen.ai@codeboxx.biz', company_name: 'Codeboxx', encrypted_password: 'password123', password: 'password123', password_confirmation: 'password123')
 puts "finished seeding users"
+<<<<<<< HEAD
 # employee1 = user1.Employee.create!(first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher')
 # employee2 = user2.Employee.create!(first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
 # employee3 = user3.Employee.create!(first_name: 'Francis', last_name: 'Patry-Jessop', title: 'Captain')
@@ -37,6 +41,8 @@ puts "finished seeding users"
 #     def employee_params
 #         params.fetch( :employee, {})
 #     end
+=======
+>>>>>>> main
 puts "seeding employees"
 Employee.create!(:user_id => user1.id, first_name: 'Mathieu', last_name: 'Houde', title: 'Gopher')
 Employee.create!(:user_id => user2.id, first_name: 'Patrick', last_name: 'Thibault', title: 'Maximalist')
