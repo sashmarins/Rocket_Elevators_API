@@ -1,8 +1,12 @@
 class CreateFactquotes < ActiveRecord::Migration[5.2]
   def change
     create_table :factquotes do |t|
-      
-      t.references :quote, null: false, foreign_key: true
+      t.string :quote_id
+      t.datetime :creation_date
+      t.string :company_name
+      t.string :email
+      t.integer :NbElevator
+
     end
   end
 end
