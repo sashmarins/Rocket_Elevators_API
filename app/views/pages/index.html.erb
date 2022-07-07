@@ -789,6 +789,7 @@
 <!-- /Clients -->
 
 <!--contact-->
+ <%= form_with scope: :lead, url: lead_path, local: true do |form| %>
 <section id="contact">
     <div class="container">
 
@@ -802,7 +803,7 @@
         <div class="row">
 
             <!-- FORM -->
-            <%= form_with scope: :lead, url: lead_path, local: true do |form| %>
+           
             <div class="col-md-8 col-sm-8">
 
                 <h3>You can leave us any message by filling up <br/> this form.</h3>
@@ -914,7 +915,7 @@
                 </form>
 
             </div>
-         <% end %>
+
             <!-- /FORM -->
 
             <!-- INFO -->
@@ -942,7 +943,7 @@
 </section>
 <!-- /CONTACT -->
 
-
+         <% end %>
 
 
 

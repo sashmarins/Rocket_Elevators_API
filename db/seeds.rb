@@ -53,7 +53,7 @@ puts "finshed seeding employees"
 
 
 
-e.type ["standard", "Premium", "Excelium"].sample(1)
+# e.type ["standard", "Premium", "Excelium"].sample(1)
 
 def random_elevator_type
     elevator_type_random = rand(3)

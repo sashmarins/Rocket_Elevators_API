@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "user_id"
     t.integer "amount_of_elevators"
     t.integer "amount_of_floors"
     t.string "final_price"
@@ -144,10 +145,10 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.string "installation_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "company_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false, null: false
@@ -170,4 +171,5 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   add_foreign_key "customers", "users"
   add_foreign_key "elevators", "columns"
   add_foreign_key "employees", "users"
+  add_foreign_key "quotes", "users"
 end
