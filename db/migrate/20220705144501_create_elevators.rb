@@ -9,7 +9,7 @@ class CreateElevators < ActiveRecord::Migration[5.2]
       t.string :elevator_last_inspection_date
       t.string :elevator_inspection_certificate
       t.text :info
-      t.text :notes
+      t.text :notes 
 
       t.timestamps
     end
