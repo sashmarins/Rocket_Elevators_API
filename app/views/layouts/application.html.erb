@@ -93,30 +93,22 @@
                                     <li><%= link_to "Commercial", commercial_path, 'data-turbolinks': false %></li>
                                 </ul>
                             </li>
-                            <li>
                                 <!-- PORTFOLIO-->
-                                <a href="#portfolio">
-                                        PORTFOLIO
-                                    </a>
+                            <li>
+                            <%= link_to "PORTFOLIO", "#{root_path}#portfolio", 'data-turbolinks': false %>
                             </li>
                             <li>
                                 <!-- NEWS -->
-                                <a href="#news">
-                                        NEWS
-                                    </a>
+                                <%= link_to "NEWS", "#{root_path}#news", 'data-turbolinks': false %>
                             </li>
 
                             <li>
                                 <!-- CLIENTS -->
-                                <a href="#clients">
-                                    CLIENTS
-                                </a>
+                                <%= link_to "CLIENTS", "#{root_path}#clients", 'data-turbolinks': false %>
                             </li>
                             <li>
                                 <!-- CONTACT -->
-                                <a href="#contact">
-                                        CONTACT
-                                    </a>
+                                <%= link_to "CONTACT", "#{root_path}#contact", 'data-turbolinks': false %>
                             </li>
                                 <li>
                                     <!-- LOGIN -->
@@ -204,8 +196,6 @@
                     <li><a>Terms &amp; Conditions</a></li>
                     <li>&bull;</li>
                     <li><a>Privacy</a></li>
-                    <li>&bull;</li>
-                    <li><a>Admin</a></li>
 
                 </ul>
                 &copy; All Rights Reserved, Rocket Elevators Inc
