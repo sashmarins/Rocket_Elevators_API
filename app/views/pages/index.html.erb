@@ -811,6 +811,7 @@
         <div class="row">
 
             <!-- FORM -->
+            <%= form_with scope: :lead, url: lead_path, local: true do |form| %>
             <div class="col-md-8 col-sm-8">
 
                 <h3>You can leave us any message by filling up <br/> this form.</h3>
@@ -844,23 +845,23 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="contact:name">Full Name *</label>
-                                <input required type="text" value="" class="form-control" name="contact[name][required]" id="name">
+                                <label for="name">Full Name *</label>
+                                <input required type="text" value="" class="form-control" name="name" id="name">
                             </div>
                             <div class="col-md-8">
-                                <label for="contact:email">E-mail Address *</label>
-                                <input required type="email" value="" class="form-control" name="contact[email][required]" id="email">
+                                <label for="email">E-mail Address *</label>
+                                <input required type="email" value="" class="form-control" name="email" id="email">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="contact:phone">Phone</label>
-                                <input type="text" value="" class="form-control" name="contact[phone]" id="phone">
+                                <label for="phone">Phone</label>
+                                <input type="text" value="" class="form-control" name="phone" id="phone">
                             </div>
                             <div class="col-md-8">
-                                <label for="contact:company">Company Name</label>
-                                <input type="text" value="" class="form-control" name="contact[company]" id="company_name">
+                                <label for="company">Company Name</label>
+                                <input type="text" value="" class="form-control" name="company" id="company_name">
                             </div>
                         </div>
 
@@ -870,12 +871,12 @@
 
 
                             <div class="col-md-4">
-                                <label for="contact:project_name">Project Name </label>
-                                <input type="text" value="" class="form-control" name="contact[project_name]" id="project_name">
+                                <label for="project_name">Project Name </label>
+                                <input type="text" value="" class="form-control" name="project_name" id="project_name">
                             </div>
                             <div class="col-md-8">
-                                <label for="contact:project_description">Project Description </label>
-                                <input type="text" value="" class="form-control" name="contact[project_description]" id="project_description">
+                                <label for="project_description">Project Description </label>
+                                <input type="text" value="" class="form-control" name="project_description" id="project_description">
 
                             </div>
                         </div>
@@ -884,7 +885,7 @@
 
                             <div class="col-md-4">
                                 <label for="department">Department</label>
-                                <select class="form-control pointer" name="contact[department]" id="department">
+                                <select class="form-control pointer" name="department" id="department">
                                                 <option value="">--- Select ---</option>
                                                 <option value="Marketing">Marketing</option>
                                                 <option value="Webdesign">Engineering</option>
@@ -896,17 +897,17 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="contact:message">Message *</label>
-                                <textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="message"></textarea>
+                                <label for="message">Message *</label>
+                                <textarea required maxlength="10000" rows="8" class="form-control" name="message" id="message"></textarea>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-10">
-                                <label for="contact:attachment">File Attachment</label>
+                                <label for="attachment">File Attachment</label>
 
                                 <!-- custom file upload -->
-                                <input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
+                                <input class="custom-file-upload" type="file" id="file" name="attachment" id="attachment" data-btn-text="Select a File" />
                                 <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
                             </div>
@@ -915,14 +916,14 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary" onclick="myAlert()"><i class="fa fa-check"></i> Send a message </button>
+                            <%= form.submit %>
                         </div>
                     </div>
 
                 </form>
 
             </div>
-
+         <% end %>
             <!-- /FORM -->
 
             <!-- INFO -->
