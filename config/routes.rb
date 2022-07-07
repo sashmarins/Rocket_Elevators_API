@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post "lead", to: "lead#create"
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
+ # get "portfolio", to: "pages#portfolio"
   resources :quotes
   
  end
