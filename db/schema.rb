@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "role_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -137,20 +136,20 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.integer "amount_of_elevators", null: false
-    t.integer "amount_of_floors", null: false
-    t.integer "final_price"
-    t.string "building_type", null: false
-    t.string "elevator_type", null: false
+    t.integer "amount_of_elevators"
+    t.integer "amount_of_floors"
+    t.string "final_price"
+    t.string "building_type"
+    t.string "elevator_type"
     t.integer "installation_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "company_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "company_name"
     t.boolean "is_admin", default: false, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
