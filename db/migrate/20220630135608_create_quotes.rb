@@ -1,6 +1,7 @@
 class CreateQuotes < ActiveRecord::Migration[5.2]
   def change
     create_table :quotes do |t|
+      t.references :user, foreign_key: true
       t.integer :amount_of_elevators
       t.integer :amount_of_floors
       t.string :final_price
