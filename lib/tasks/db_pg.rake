@@ -1,8 +1,4 @@
 require 'pg'
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 task spec: ["pg:db:test:prepare"]
 
 namespace :pg do
@@ -13,6 +9,7 @@ namespace :pg do
     task :drop do
       Rake::Task["db:drop"].invoke
     end
+    
 
     task :create do
       Rake::Task["db:create"].invoke
@@ -77,7 +74,6 @@ namespace :pg do
     Rails.application.config.paths['config/database'] = ["config/database_pg.yml"]
   end
 
-<<<<<<< HEAD
   task :revert_to_original_config do
     # reset config variables to original values
     ENV['SCHEMA'] = @original_config[:env_schema]
@@ -92,28 +88,14 @@ namespace :pg do
   end
 
 
-  #Output a table of current connections to the DB
-  conn = PG.connect( dbname: 'postgres' )
-  conn.exec( "SELECT * FROM quotes" ) do |result|
-    puts "     PID | User             | Query"
-    result.each do |row|
-      puts " %7d | %-16s | %s " %
-        row.values_at('pid', 'usename', 'query')
-    end
-  end
 
-  task :seed => :enviroment do 
-    Dir.glob("#{Rails.root}/db/scheema.rb").each { |t| require t }
-  end
+  # task :seed => :enviroment do 
+  #   Dir.glob("#{Rails.root}/db/scheema.rb").each { |t| require t }
+  #   FileUtils.mkdir(dir) unless Dir.exists?(dir)
+  #   ActiveRecord::Base.descendants.each do |t|
+  #   end
+
+  # end
 
 
 end
-=======
-    task :revert_to_original_config do
-      # reset config variables to original values
-      ENV['SCHEMA'] = @original_config[:env_schema]
-      Rails.application.config = @original_config[:config]
-    end
-
-  end
->>>>>>> main

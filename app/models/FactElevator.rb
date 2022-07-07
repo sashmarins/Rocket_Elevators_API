@@ -1,0 +1,2 @@
+class FactElevator < PgBase
+end
