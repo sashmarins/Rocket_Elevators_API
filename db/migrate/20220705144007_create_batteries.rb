@@ -2,7 +2,6 @@ class CreateBatteries < ActiveRecord::Migration[5.2]
   def change
     create_table :batteries do |t|
       t.references :building, null: false, foreign_key: true
-      # t.integer :building_id
       t.string :building_type
       t.string :battery_status
       #employeeID
