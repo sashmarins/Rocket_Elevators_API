@@ -106,7 +106,6 @@ gem "image_processing", ">= 1.2"
 #postgres
 gem 'pg', '~> 1.4', '>= 1.4.1'
 
-
 #FAKER 
 gem 'faker', '~> 2.21'
 
@@ -114,5 +113,4 @@ gem 'faker', '~> 2.21'
 gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 gem 'lazy_high_charts', '~> 1.6', '>= 1.6.1'
 gem 'rails_admin_charts', '~> 0.0.12'
-#PG GEM
 
