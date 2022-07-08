@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.integer "number_of_elevators"
     t.string "customer_created_date"
     t.string "contact_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "email"
     t.text "company_description"
     t.string "service_tech_name"
