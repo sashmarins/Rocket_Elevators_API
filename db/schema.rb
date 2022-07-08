@@ -78,10 +78,8 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "address_id", null: false
+    t.bigint "user_id"
     t.string "company_name"
-    t.string "address"
     t.string "customer_created_date"
     t.string "contact_name"
     t.integer "phone_number"
@@ -92,7 +90,6 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.string "service_tech_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_customers_on_address_id"
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
 
@@ -147,6 +144,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "company_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_admin", default: false, null: false
@@ -165,7 +163,6 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   add_foreign_key "building_details", "buildings"
   add_foreign_key "buildings", "customers"
   add_foreign_key "columns", "batteries"
-  add_foreign_key "customers", "addresses"
   add_foreign_key "customers", "users"
   add_foreign_key "elevators", "columns"
   add_foreign_key "employees", "users"
