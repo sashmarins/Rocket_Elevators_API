@@ -21,8 +21,3 @@ class ApplicationController < ActionController::Base
     #     redirect_to root_path, alert: "Not authorized" if current_user.try(:admin) == false
     # end
 end
-module YourAppName
-  class Application < Rails::Application
-    config.exceptions_app = self.routes 
-  end
-end

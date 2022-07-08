@@ -35,11 +35,15 @@ namespace :warehouse do
 
                 Customer.all.each do |customer|
                     Address.all.each do |address| 
+                        if address.customer_id == customer.id
                         Building.all.each do |building| 
+                            if building.customer_id == customer.id
                             Battery.all.each do |battery|
+                                if battery.building_id == building.id
                                 Column.all.each do |column|
+                                    if column.battery_id == battery.id
                                     Elevator.all.each do |elevator|
-                                        if elevator.column_id == column.id && column.battery_id == battery.id && battery.building_id == building.id && building.customer_id == customer.id && address.customer_id == customer.id
+                                        if elevator.column_id == column.id
                                             FactElevator.create!(
                                                 serial_number: elevator.serial_number,
                                                 date_of_commissioning: elevator.elevator_commission_date,
@@ -49,6 +53,11 @@ namespace :warehouse do
                                             )
                                         end
                                     end
+                                    end
+                                end
+                            end
+                        end
+
                                 end
                             end
                         end           
