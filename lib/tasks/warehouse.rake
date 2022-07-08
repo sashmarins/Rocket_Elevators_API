@@ -63,6 +63,7 @@ namespace :warehouse do
                         end           
                     end    
                 end
+                puts "Done Seeding Fact Elevators"
 
                 Customer.all.each do |customer|
                     Address.all.each do |address|
