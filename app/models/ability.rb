@@ -2,6 +2,9 @@
 
 class Ability
   include CanCan::Ability
+
+  include RailsAdminCharts
+
   
   def initialize (user)
       if user.admin?
