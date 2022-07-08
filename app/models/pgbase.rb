@@ -1,6 +1,5 @@
 require './config/initializers/db_pg.rb'
 
-
 class PgBase < ActiveRecord::Base
     self.abstract_class = true
     establish_connection DB_PG
