@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_07_05_144501) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.bigint "customer_id", null: false
+    t.bigint "customer_id"
     t.string "address_type"
     t.string "address_status"
     t.string "entity"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "company_name"
     t.integer "number_of_elevators"
     t.string "customer_created_date"
