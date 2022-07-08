@@ -290,358 +290,358 @@ addressList = [
             "lng": -112.2488391
         }
     },
-    # {
-    #     "address1": "2203 7th Street Road",
-    #     "address2": "",
-    #     "city": "Louisville",
-    #     "state": "KY",
-    #     "postalCode": "40208",
-    #     "coordinates": {
-    #         "lat": 38.218107,
-    #         "lng": -85.779006
-    #     }
-    # },
-    # {
-    #     "address1": "6463 Vrain Street",
-    #     "address2": "",
-    #     "city": "Arvada",
-    #     "state": "CO",
-    #     "postalCode": "80003",
-    #     "coordinates": {
-    #         "lat": 39.814056,
-    #         "lng": -105.046913
-    #     }
-    # },
-    # {
-    #     "address1": "87 Horseshoe Drive",
-    #     "address2": "",
-    #     "city": "West Windsor",
-    #     "state": "VT",
-    #     "postalCode": "05037",
-    #     "coordinates": {
-    #         "lat": 43.4731793,
-    #         "lng": -72.4967532
-    #     }
-    # },
-    # {
-    #     "address1": "60 Desousa Drive",
-    #     "address2": "",
-    #     "city": "Manchester",
-    #     "state": "CT",
-    #     "postalCode": "06040",
-    #     "coordinates": {
-    #         "lat": 41.7409259,
-    #         "lng": -72.5619104
-    #     }
-    # },
-    # {
-    #     "address1": "4 Old Colony Way",
-    #     "address2": "",
-    #     "city": "Yarmouth",
-    #     "state": "MA",
-    #     "postalCode": "02664",
-    #     "coordinates": {
-    #         "lat": 41.697168,
-    #         "lng": -70.189992
-    #     }
-    # },
-    # {
-    #     "address1": "314 South 17th Street",
-    #     "address2": "",
-    #     "city": "Nashville",
-    #     "state": "TN",
-    #     "postalCode": "37206",
-    #     "coordinates": {
-    #         "lat": 36.1719075,
-    #         "lng": -86.740228
-    #     }
-    # },
-    # {
-    #     "address1": "1649 Timberridge Court",
-    #     "address2": "",
-    #     "city": "Fayetteville",
-    #     "state": "AR",
-    #     "postalCode": "72704",
-    #     "coordinates": {
-    #         "lat": 36.084563,
-    #         "lng": -94.206082
-    #     }
-    # },
-    # {
-    #     "address1": "5461 West Shades Valley Drive",
-    #     "address2": "",
-    #     "city": "Montgomery",
-    #     "state": "AL",
-    #     "postalCode": "36108",
-    #     "coordinates": {
-    #         "lat": 32.296422,
-    #         "lng": -86.34280299999999
-    #     }
-    # },
-    # {
-    #     "address1": "629 Debbie Drive",
-    #     "address2": "",
-    #     "city": "Nashville",
-    #     "state": "TN",
-    #     "postalCode": "37076",
-    #     "coordinates": {
-    #         "lat": 36.208114,
-    #         "lng": -86.58621199999999
-    #     }
-    # },
-    # {
-    #     "address1": "22572 Toreador Drive",
-    #     "address2": "",
-    #     "city": "Salinas",
-    #     "state": "CA",
-    #     "postalCode": "93908",
-    #     "coordinates": {
-    #         "lat": 36.602449,
-    #         "lng": -121.699071
-    #     }
-    # },
-    # {
-    #     "address1": "3034 Mica Street",
-    #     "address2": "",
-    #     "city": "Fayetteville",
-    #     "state": "AR",
-    #     "postalCode": "72704",
-    #     "coordinates": {
-    #         "lat": 36.0807929,
-    #         "lng": -94.2066449
-    #     }
-    # },
-    # {
-    #     "address1": "3729 East Mission Boulevard",
-    #     "address2": "",
-    #     "city": "Fayetteville",
-    #     "state": "AR",
-    #     "postalCode": "72703",
-    #     "coordinates": {
-    #         "lat": 36.0919353,
-    #         "lng": -94.10654219999999
-    #     }
-    # },
-    # {
-    #     "address1": "5114 Greentree Drive",
-    #     "address2": "",
-    #     "city": "Nashville",
-    #     "state": "TN",
-    #     "postalCode": "37211",
-    #     "coordinates": {
-    #         "lat": 36.0618539,
-    #         "lng": -86.738508
-    #     }
-    # },
-    # {
-    #     "address1": "3466 Southview Avenue",
-    #     "address2": "",
-    #     "city": "Montgomery",
-    #     "state": "AL",
-    #     "postalCode": "36111",
-    #     "coordinates": {
-    #         "lat": 32.341227,
-    #         "lng": -86.2846859
-    #     }
-    # },
-    # {
-    #     "address1": "1513 Cathy Street",
-    #     "address2": "",
-    #     "city": "Savannah",
-    #     "state": "GA",
-    #     "postalCode": "31415",
-    #     "coordinates": {
-    #         "lat": 32.067416,
-    #         "lng": -81.125331
-    #     }
-    # },
-    # {
-    #     "address1": "600 West 19th Avenue",
-    #     "address2": "APT B",
-    #     "city": "Anchorage",
-    #     "state": "AK",
-    #     "postalCode": "99503",
-    #     "coordinates": {
-    #         "lat": 61.203115,
-    #         "lng": -149.894107
-    #     }
-    # },
-    # {
-    #     "address1": "1208 Elkader Court North",
-    #     "address2": "",
-    #     "city": "Nashville",
-    #     "state": "TN",
-    #     "postalCode": "37013",
-    #     "coordinates": {
-    #         "lat": 36.080049,
-    #         "lng": -86.60116099999999
-    #     }
-    # },
-    # {
-    #     "address1": "210 Green Road",
-    #     "address2": "",
-    #     "city": "Manchester",
-    #     "state": "CT",
-    #     "postalCode": "06042",
-    #     "coordinates": {
-    #         "lat": 41.7909099,
-    #         "lng": -72.51195129999999
-    #     }
-    # },
-    # {
-    #     "address1": "49548 Road 200",
-    #     "address2": "",
-    #     "city": "O'Neals",
-    #     "state": "CA",
-    #     "postalCode": "93645",
-    #     "coordinates": {
-    #         "lat": 37.153463,
-    #         "lng": -119.648192
-    #     }
-    # },
-    # {
-    #     "address1": "81 Seaton Place Northwest",
-    #     "address2": "",
-    #     "city": "Washington",
-    #     "state": "DC",
-    #     "postalCode": "20001",
-    #     "coordinates": {
-    #         "lat": 38.9149499,
-    #         "lng": -77.01170259999999
-    #     }
-    # },
-    # {
-    #     "address1": "1267 Martin Street",
-    #     "address2": "#203",
-    #     "city": "Nashville",
-    #     "state": "TN",
-    #     "postalCode": "37203",
-    #     "coordinates": {
-    #         "lat": 36.1404897,
-    #         "lng": -86.7695179
-    #     }
-    # },
-    # {
-    #     "address1": "7431 Candace Way",
-    #     "address2": "#1",
-    #     "city": "Louisville",
-    #     "state": "KY",
-    #     "postalCode": "40214",
-    #     "coordinates": {
-    #         "lat": 38.142768,
-    #         "lng": -85.7717132
-    #     }
-    # },
-    # {
-    #     "address1": "1407 Walden Court",
-    #     "address2": "",
-    #     "city": "Crofton",
-    #     "state": "MD",
-    #     "postalCode": "21114",
-    #     "coordinates": {
-    #         "lat": 39.019306,
-    #         "lng": -76.660653
-    #     }
-    # },
-    # {
-    #     "address1": "5906 Milton Avenue",
-    #     "address2": "",
-    #     "city": "Deale",
-    #     "state": "MD",
-    #     "postalCode": "20751",
-    #     "coordinates": {
-    #         "lat": 38.784451,
-    #         "lng": -76.54125499999999
-    #     }
-    # },
-    # {
-    #     "address1": "74 Springfield Street",
-    #     "address2": "B",
-    #     "city": "Agawam",
-    #     "state": "MA",
-    #     "postalCode": "01001",
-    #     "coordinates": {
-    #         "lat": 42.0894922,
-    #         "lng": -72.6297558
-    #     }
-    # },
-    # {
-    #     "address1": "2905 Stonebridge Court",
-    #     "address2": "",
-    #     "city": "Norman",
-    #     "state": "OK",
-    #     "postalCode": "73071",
-    #     "coordinates": {
-    #         "lat": 35.183319,
-    #         "lng": -97.40210499999999
-    #     }
-    # },
-    # {
-    #     "address1": "20930 Todd Valley Road",
-    #     "address2": "",
-    #     "city": "Foresthill",
-    #     "state": "CA",
-    #     "postalCode": "95631",
-    #     "coordinates": {
-    #         "lat": 38.989466,
-    #         "lng": -120.883108
-    #     }
-    # },
-    # {
-    #     "address1": "5928 West Mauna Loa Lane",
-    #     "address2": "",
-    #     "city": "Glendale",
-    #     "state": "AZ",
-    #     "postalCode": "85306",
-    #     "coordinates": {
-    #         "lat": 33.6204899,
-    #         "lng": -112.18702
-    #     }
-    # },
-    # {
-    #     "address1": "802 Madison Street Northwest",
-    #     "address2": "",
-    #     "city": "Washington",
-    #     "state": "DC",
-    #     "postalCode": "20011",
-    #     "coordinates": {
-    #         "lat": 38.9582381,
-    #         "lng": -77.0244287
-    #     }
-    # },
-    # {
-    #     "address1": "2811 Battery Place Northwest",
-    #     "address2": "",
-    #     "city": "Washington",
-    #     "state": "DC",
-    #     "postalCode": "20016",
-    #     "coordinates": {
-    #         "lat": 38.9256252,
-    #         "lng": -77.0982646
-    #     }
-    # },
-    # {
-    #     "address1": "210 Lacross Lane",
-    #     "address2": "",
-    #     "city": "Westmore",
-    #     "state": "VT",
-    #     "postalCode": "05860",
-    #     "coordinates": {
-    #         "lat": 44.771005,
-    #         "lng": -72.048664
-    #     }
-    # },
-    # {
-    #     "address1": "2010 Rising Hill Drive",
-    #     "address2": "",
-    #     "city": "Norman",
-    #     "state": "OK",
-    #     "postalCode": "73071",
-    #     "coordinates": {
-    #         "lat": 35.177281,
-    #         "lng": -97.411869
-    #     }
-    # },
+    {
+        "address1": "2203 7th Street Road",
+        "address2": "",
+        "city": "Louisville",
+        "state": "KY",
+        "postalCode": "40208",
+        "coordinates": {
+            "lat": 38.218107,
+            "lng": -85.779006
+        }
+    },
+    {
+        "address1": "6463 Vrain Street",
+        "address2": "",
+        "city": "Arvada",
+        "state": "CO",
+        "postalCode": "80003",
+        "coordinates": {
+            "lat": 39.814056,
+            "lng": -105.046913
+        }
+    },
+    {
+        "address1": "87 Horseshoe Drive",
+        "address2": "",
+        "city": "West Windsor",
+        "state": "VT",
+        "postalCode": "05037",
+        "coordinates": {
+            "lat": 43.4731793,
+            "lng": -72.4967532
+        }
+    },
+    {
+        "address1": "60 Desousa Drive",
+        "address2": "",
+        "city": "Manchester",
+        "state": "CT",
+        "postalCode": "06040",
+        "coordinates": {
+            "lat": 41.7409259,
+            "lng": -72.5619104
+        }
+    },
+    {
+        "address1": "4 Old Colony Way",
+        "address2": "",
+        "city": "Yarmouth",
+        "state": "MA",
+        "postalCode": "02664",
+        "coordinates": {
+            "lat": 41.697168,
+            "lng": -70.189992
+        }
+    },
+    {
+        "address1": "314 South 17th Street",
+        "address2": "",
+        "city": "Nashville",
+        "state": "TN",
+        "postalCode": "37206",
+        "coordinates": {
+            "lat": 36.1719075,
+            "lng": -86.740228
+        }
+    },
+    {
+        "address1": "1649 Timberridge Court",
+        "address2": "",
+        "city": "Fayetteville",
+        "state": "AR",
+        "postalCode": "72704",
+        "coordinates": {
+            "lat": 36.084563,
+            "lng": -94.206082
+        }
+    },
+    {
+        "address1": "5461 West Shades Valley Drive",
+        "address2": "",
+        "city": "Montgomery",
+        "state": "AL",
+        "postalCode": "36108",
+        "coordinates": {
+            "lat": 32.296422,
+            "lng": -86.34280299999999
+        }
+    },
+    {
+        "address1": "629 Debbie Drive",
+        "address2": "",
+        "city": "Nashville",
+        "state": "TN",
+        "postalCode": "37076",
+        "coordinates": {
+            "lat": 36.208114,
+            "lng": -86.58621199999999
+        }
+    },
+    {
+        "address1": "22572 Toreador Drive",
+        "address2": "",
+        "city": "Salinas",
+        "state": "CA",
+        "postalCode": "93908",
+        "coordinates": {
+            "lat": 36.602449,
+            "lng": -121.699071
+        }
+    },
+    {
+        "address1": "3034 Mica Street",
+        "address2": "",
+        "city": "Fayetteville",
+        "state": "AR",
+        "postalCode": "72704",
+        "coordinates": {
+            "lat": 36.0807929,
+            "lng": -94.2066449
+        }
+    },
+    {
+        "address1": "3729 East Mission Boulevard",
+        "address2": "",
+        "city": "Fayetteville",
+        "state": "AR",
+        "postalCode": "72703",
+        "coordinates": {
+            "lat": 36.0919353,
+            "lng": -94.10654219999999
+        }
+    },
+    {
+        "address1": "5114 Greentree Drive",
+        "address2": "",
+        "city": "Nashville",
+        "state": "TN",
+        "postalCode": "37211",
+        "coordinates": {
+            "lat": 36.0618539,
+            "lng": -86.738508
+        }
+    },
+    {
+        "address1": "3466 Southview Avenue",
+        "address2": "",
+        "city": "Montgomery",
+        "state": "AL",
+        "postalCode": "36111",
+        "coordinates": {
+            "lat": 32.341227,
+            "lng": -86.2846859
+        }
+    },
+    {
+        "address1": "1513 Cathy Street",
+        "address2": "",
+        "city": "Savannah",
+        "state": "GA",
+        "postalCode": "31415",
+        "coordinates": {
+            "lat": 32.067416,
+            "lng": -81.125331
+        }
+    },
+    {
+        "address1": "600 West 19th Avenue",
+        "address2": "APT B",
+        "city": "Anchorage",
+        "state": "AK",
+        "postalCode": "99503",
+        "coordinates": {
+            "lat": 61.203115,
+            "lng": -149.894107
+        }
+    },
+    {
+        "address1": "1208 Elkader Court North",
+        "address2": "",
+        "city": "Nashville",
+        "state": "TN",
+        "postalCode": "37013",
+        "coordinates": {
+            "lat": 36.080049,
+            "lng": -86.60116099999999
+        }
+    },
+    {
+        "address1": "210 Green Road",
+        "address2": "",
+        "city": "Manchester",
+        "state": "CT",
+        "postalCode": "06042",
+        "coordinates": {
+            "lat": 41.7909099,
+            "lng": -72.51195129999999
+        }
+    },
+    {
+        "address1": "49548 Road 200",
+        "address2": "",
+        "city": "O'Neals",
+        "state": "CA",
+        "postalCode": "93645",
+        "coordinates": {
+            "lat": 37.153463,
+            "lng": -119.648192
+        }
+    },
+    {
+        "address1": "81 Seaton Place Northwest",
+        "address2": "",
+        "city": "Washington",
+        "state": "DC",
+        "postalCode": "20001",
+        "coordinates": {
+            "lat": 38.9149499,
+            "lng": -77.01170259999999
+        }
+    },
+    {
+        "address1": "1267 Martin Street",
+        "address2": "#203",
+        "city": "Nashville",
+        "state": "TN",
+        "postalCode": "37203",
+        "coordinates": {
+            "lat": 36.1404897,
+            "lng": -86.7695179
+        }
+    },
+    {
+        "address1": "7431 Candace Way",
+        "address2": "#1",
+        "city": "Louisville",
+        "state": "KY",
+        "postalCode": "40214",
+        "coordinates": {
+            "lat": 38.142768,
+            "lng": -85.7717132
+        }
+    },
+    {
+        "address1": "1407 Walden Court",
+        "address2": "",
+        "city": "Crofton",
+        "state": "MD",
+        "postalCode": "21114",
+        "coordinates": {
+            "lat": 39.019306,
+            "lng": -76.660653
+        }
+    },
+    {
+        "address1": "5906 Milton Avenue",
+        "address2": "",
+        "city": "Deale",
+        "state": "MD",
+        "postalCode": "20751",
+        "coordinates": {
+            "lat": 38.784451,
+            "lng": -76.54125499999999
+        }
+    },
+    {
+        "address1": "74 Springfield Street",
+        "address2": "B",
+        "city": "Agawam",
+        "state": "MA",
+        "postalCode": "01001",
+        "coordinates": {
+            "lat": 42.0894922,
+            "lng": -72.6297558
+        }
+    },
+    {
+        "address1": "2905 Stonebridge Court",
+        "address2": "",
+        "city": "Norman",
+        "state": "OK",
+        "postalCode": "73071",
+        "coordinates": {
+            "lat": 35.183319,
+            "lng": -97.40210499999999
+        }
+    },
+    {
+        "address1": "20930 Todd Valley Road",
+        "address2": "",
+        "city": "Foresthill",
+        "state": "CA",
+        "postalCode": "95631",
+        "coordinates": {
+            "lat": 38.989466,
+            "lng": -120.883108
+        }
+    },
+    {
+        "address1": "5928 West Mauna Loa Lane",
+        "address2": "",
+        "city": "Glendale",
+        "state": "AZ",
+        "postalCode": "85306",
+        "coordinates": {
+            "lat": 33.6204899,
+            "lng": -112.18702
+        }
+    },
+    {
+        "address1": "802 Madison Street Northwest",
+        "address2": "",
+        "city": "Washington",
+        "state": "DC",
+        "postalCode": "20011",
+        "coordinates": {
+            "lat": 38.9582381,
+            "lng": -77.0244287
+        }
+    },
+    {
+        "address1": "2811 Battery Place Northwest",
+        "address2": "",
+        "city": "Washington",
+        "state": "DC",
+        "postalCode": "20016",
+        "coordinates": {
+            "lat": 38.9256252,
+            "lng": -77.0982646
+        }
+    },
+    {
+        "address1": "210 Lacross Lane",
+        "address2": "",
+        "city": "Westmore",
+        "state": "VT",
+        "postalCode": "05860",
+        "coordinates": {
+            "lat": 44.771005,
+            "lng": -72.048664
+        }
+    },
+    {
+        "address1": "2010 Rising Hill Drive",
+        "address2": "",
+        "city": "Norman",
+        "state": "OK",
+        "postalCode": "73071",
+        "coordinates": {
+            "lat": 35.177281,
+            "lng": -97.411869
+        }
+    },
     # {
     #     "address1": "388 East Main Street",
     #     "address2": "",
@@ -5692,7 +5692,7 @@ addressList.each do |requiredAddress|
         password: "password123"
     )
     # puts "============================"
-    puts requiredAddress[:address1]
+    # puts requiredAddress[:address1]
     # puts "============================"
     customer = Customer.create!(
         user_id: users[:id],
@@ -5710,6 +5710,18 @@ addressList.each do |requiredAddress|
         updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
         # index_customers_on_address_id
         # index_customers_on_user_id
+    )
+
+    quotes = Quote.create(
+        user_id: users[:id],
+        amount_of_elevators: Faker::Number.number(digits: 2),
+        amount_of_floors: Faker::Number.number(digits: 2),
+        final_price: Faker::Number.number(digits: 6),
+        building_type: ["Residential", "Corporate", "Commercial", "Hybrid"].sample(1),
+        elevator_type: ["Standard", "Premium", "Excelium"].sample(1),
+        installation_price: ["13%", "10%", "16%"].sample(1),
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
     )
 
     
