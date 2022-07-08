@@ -1,5 +1,4 @@
 class Quote < ApplicationRecord
-    # belongs_to :user
     include RailsAdminCharts
-
+   belongs_to :user
 end
