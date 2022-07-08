@@ -15,13 +15,37 @@ ActiveRecord::Schema.define(version: 2022_07_05_180632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dimcustomers", force: :cascade do |t|
+  create_table "dim_customers", force: :cascade do |t|
     t.datetime "creation_date"
     t.string "company_name"
     t.string "company_contact_name"
     t.string "email"
     t.integer "NbElevators"
     t.string "customer_city"
+  end
+
+  create_table "fact_contacts", force: :cascade do |t|
+    t.string "contactId"
+    t.datetime "creation_date"
+    t.string "company_name"
+    t.string "email"
+    t.string "project_name"
+  end
+
+  create_table "fact_elevators", force: :cascade do |t|
+    t.string "serial_number"
+    t.datetime "date_of_commissioning"
+    t.string "building_id"
+    t.string "customer_id"
+    t.string "building_city"
+  end
+
+  create_table "fact_quotes", force: :cascade do |t|
+    t.string "quote_id"
+    t.datetime "creation_date"
+    t.string "company_name"
+    t.string "email"
+    t.integer "NbElevator"
   end
 
 end
