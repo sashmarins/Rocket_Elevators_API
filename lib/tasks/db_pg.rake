@@ -1,12 +1,15 @@
+require 'pg'
 task spec: ["pg:db:test:prepare"]
 
 namespace :pg do
+   desc "Manage database"
 
   namespace :db do |ns|
 
     task :drop do
       Rake::Task["db:drop"].invoke
     end
+    
 
     task :create do
       Rake::Task["db:create"].invoke
@@ -24,7 +27,7 @@ namespace :pg do
       Rake::Task["db:rollback"].invoke
     end
 
-    task :seed do
+    task :seed do 
       Rake::Task["db:seed"].invoke
     end
 
@@ -76,4 +79,23 @@ namespace :pg do
     ENV['SCHEMA'] = @original_config[:env_schema]
     Rails.application.config = @original_config[:config]
   end
+
+  
+
+  desc 'Say hello!'
+  task :hello_world do
+  puts "Hello DUDEEEEEES"
+  end
+
+
+
+  # task :seed => :enviroment do 
+  #   Dir.glob("#{Rails.root}/db/scheema.rb").each { |t| require t }
+  #   FileUtils.mkdir(dir) unless Dir.exists?(dir)
+  #   ActiveRecord::Base.descendants.each do |t|
+  #   end
+
+  # end
+
+
 end

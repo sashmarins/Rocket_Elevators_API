@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_07_05_144501) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "customer_id"
     t.string "address_type"
     t.string "address_status"
     t.string "entity"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_addresses_on_customer_id"
   end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.string "company_name"
+    t.integer "number_of_elevators"
     t.string "customer_created_date"
     t.string "contact_name"
     t.integer "phone_number"
@@ -133,6 +136,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "user_id"
     t.integer "amount_of_elevators"
     t.integer "amount_of_floors"
     t.string "final_price"
@@ -141,12 +145,13 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.string "installation_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_quotes_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
-    t.string "company_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "company_name"
     t.boolean "is_admin", default: false, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -159,6 +164,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "customers"
   add_foreign_key "batteries", "buildings"
   add_foreign_key "building_details", "buildings"
   add_foreign_key "buildings", "customers"
@@ -166,4 +172,5 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
   add_foreign_key "customers", "users"
   add_foreign_key "elevators", "columns"
   add_foreign_key "employees", "users"
+  add_foreign_key "quotes", "users"
 end

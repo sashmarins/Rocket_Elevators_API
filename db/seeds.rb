@@ -5694,22 +5694,8 @@ addressList.each do |requiredAddress|
     # puts "============================"
     puts requiredAddress[:address1]
     # puts "============================"
-    address = Address.create!(
-        address_type: random_address_type(),
-        address_status: random_address_status,
-        entity: random_address_entity,
-        suite_or_apartment: ["Suite", "Apartment"].sample(1),
-        street_address: requiredAddress[:address1],
-        city: requiredAddress[:city],
-        postal_code: requiredAddress[:postalCode],
-        country: "US",
-        notes: Faker::Quote.matz,
-        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
-        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
-    )
-
-    Customer.create!(
-        user_id: users,
+    customer = Customer.create!(
+        user_id: users[:id],
         company_name: Faker::Company.name,
         # address: address,
         customer_created_date: Faker::Date.between(from: '1999-02-20', to: '2000-02-20'),
@@ -5725,66 +5711,83 @@ addressList.each do |requiredAddress|
         # index_customers_on_address_id
         # index_customers_on_user_id
     )
+
+    
+    address = Address.create!(
+        customer_id: customer[:id],
+        address_type: random_address_type(),
+        address_status: random_address_status,
+        entity: random_address_entity,
+        suite_or_apartment: ["Suite", "Apartment"].sample(1),
+        street_address: requiredAddress[:address1],
+        city: requiredAddress[:city],
+        postal_code: requiredAddress[:postalCode],
+        country: "US",
+        notes: Faker::Quote.matz,
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+    )
     
 
-    # buildings = Building.populate 1 do |bu|
-    #     bu.customer_id = customers.id
-    #     bu.address = requiredAddress["address1"]
-    #     bu.building_admin_name = Faker::Name.name 
-    #     bu.building_admin_email = Faker::Internet.free_email
-    #     bu.building_admin_phone = Faker::PhoneNumber.cell_phone
-    #     bu.building_tech_name = Faker::Name.name
-    #     bu.building_tech_email = Faker::Internet.free_email
-    #     bu.building_tech_phone = Faker::PhoneNumber.cell_phone
-    #     bu.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
-    #     bu.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
-    #     # customer_id index_buildings_on_customer_id
-    # end
+    buildings = Building.create!(
+        customer_id: customer[:id],
+        # address = requiredAddress["address1"]
+        # can be fake address
+        building_admin_name: Faker::Name.name,
+        building_admin_email: Faker::Internet.free_email,
+        building_admin_phone: Faker::PhoneNumber.cell_phone,
+        building_tech_name: Faker::Name.name,
+        building_tech_email: Faker::Internet.free_email,
+        building_tech_phone: Faker::PhoneNumber.cell_phone,
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+        # customer_id index_buildings_on_customer_id
+    )
 
-    # BuildingDetail.populate 1 do |bud|
-    #     bud.building_id = buildings.id
-    #     bud.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
-    #     bud.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
-    #     # index_batteries_on_building_id
-    # end
+    BuildingDetail.create!(
+        building_id: buildings[:id],
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06'),
+        # index_batteries_on_building_id
+    )
 
-    # batteries = Battery.populate 1 do |ba|
-    #     ba.building_id = buildings.id
-    #     ba.building_type = random_building_type
-    #     ba.battery_status = random_battery_status
-    #     ba.date_of_commission = Faker::Date.between(from: ba.created_at, to: '2021-07-06')
-    #     ba.last_inspection_date = Faker::Date.between(from: ba.date_of_commission, to: '2022-07-06')
-    #     ba.operations_certificate = random_battery_certificate
-    #     ba.info = Faker::Quote.famous_last_words
-    #     ba.notes = Faker::Quote.matz
-    #     ba.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
-    #     ba.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
-    #     # index_batteries_on_building_id
-    # end
+    batteries = Battery.create!(
+        building_id: buildings[:id],
+        building_type: random_building_type,
+        battery_status: random_battery_status,
+        date_of_commission: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        last_inspection_date: Faker::Date.between(from: '2018-09-26', to: '2022-07-06'),
+        operations_certificate: random_battery_certificate,
+        info: Faker::Quote.famous_last_words,
+        notes: Faker::Quote.matz,
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+        # index_batteries_on_building_id
+    )
 
-    # columns = Columns.populate 1 do |co|
-    #     co.battery_id = batteries.id
-    #     co.number_of_floors_served = Faker::Number.between(from: 2, to: 90)
-    #     co.column_status = random_column_status
-    #     co.info = Faker::Quote.famous_last_words
-    #     co.notes = Faker::Quote.matz
-    #     co.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
-    #     co.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
-    #     # index_columns_on_battery_id
-    # end
+    columns = Column.create!(
+        battery_id: batteries[:id],
+        number_of_floors_served: Faker::Number.between(from: 2, to: 90),
+        column_status: random_column_status,
+        info: Faker::Quote.famous_last_words,
+        notes: Faker::Quote.matz,
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+        # index_columns_on_battery_id
+    )
 
-    # Elevator.populate 1 do |e|
-    #     e.column_id = columns.id
-    #     e.serial_number = Faker::IDNumber.chilean_id
-    #     e.elevator_model = random_elevator_type
-    #     e.elevator_status = random_elevator_status
-    #     e.elevator_commission_date = Faker::Date.between(from: e.created_at, to: '2021-07-06')
-    #     e.elevator_last_inspection_date = Faker::Date.between(from: e.elevator_commission_date, to: '2022-07-06')
-    #     e.elevator_inspection_certificate = random_battery_certificate
-    #     e.info = Faker::Quote.famous_last_words
-    #     e.notes = Faker::Quote.matz
-    #     e.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
-    #     e.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
-    #     # index_elevators_on_column_id
-    # end
+    Elevator.create!(
+        column_id: columns[:id],
+        serial_number: Faker::IDNumber.chilean_id,
+        elevator_model: random_elevator_type,
+        elevator_status: random_elevator_status,
+        elevator_commission_date: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        elevator_last_inspection_date: Faker::Date.between(from: '2018-09-26', to: '2022-07-06'),
+        elevator_inspection_certificate: random_battery_certificate,
+        info: Faker::Quote.famous_last_words,
+        notes: Faker::Quote.matz,
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
+        # index_elevators_on_column_id
+    )
 end

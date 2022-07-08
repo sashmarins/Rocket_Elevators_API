@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+  
+  #  :controllers => { :sessions => 'sessions' }
   scope '/employee' do
     resources :users
   end
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   post "lead", to: "lead#create"
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
+ # get "portfolio", to: "pages#portfolio"
   resources :quotes
   
  end

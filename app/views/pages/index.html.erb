@@ -8,6 +8,11 @@
             <li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600" data-saveperformance="off" data-title="Our Slogan" data-delay="7000">
                 <!-- MAIN IMAGE -->
                 <%= image_tag "AdobeStock_122227340.jpeg" %>
+
+                <div class="overlay dark-4">
+                    <!-- dark overlay [0 to 9 opacity] -->
+                </div>
+
                 <div class="tp-caption white_big skewfromleft tp-resizeme" data-x="120" data-y="100" data-speed="400" data-start="1500" data-easing="Power3.easeInOut" data-splitin="words" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600"
                     style="z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
                     Ride a Rocket. Next stop - Moon!
@@ -15,7 +20,7 @@
 
                 <div class="tp-caption content_text_center skewfromleft tp-resizeme" data-x="140" data-y="195" data-speed="500" data-start="2000" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1"
                     data-endspeed="600" style="z-index: 3; font-size:20px; color: ghostwhite; font-weight:400; text-shadow:none;">
-                    If you dream of elevator that will take you from point A to point B, <br /> our team is the best in this field.<br/> Let us help you choose the right service plan today.
+                    If you dream of an elevator that will take you from point A to point B, <br /> our team is the best in this field.<br/> Let us help you choose the right service plan today.
                 </div>
 
                 <div class="tp-caption skewfromleft tp-resizeme  un-button-2-lg" data-x="380" data-y="300" data-speed="300" data-start="1500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
@@ -56,6 +61,10 @@
                 <!-- MAIN IMAGE -->
                 <%= image_tag "AdobeStock_179073967.jpeg" %>
 
+                <div class="overlay dark-4">
+                    <!-- dark overlay [0 to 9 opacity] -->
+                </div>
+
                 <div class="tp-caption white_big skewfromleft tp-resizeme" data-x="-20" data-y="100" data-speed="400" data-start="1500" data-easing="Power3.easeInOut" data-splitin="words" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600"
                     style="z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
                     Corporate Building <br/> Service
@@ -84,7 +93,7 @@
 <!-- BUTTON CALLOUT -->
 <a href="#contact" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
     <span class="font-lato fs-30">
-            Did Rocket Elevators convinced you? 
+            Did Rocket Elevators convince you? 
             <strong>Contact us &raquo;</strong>
         </span>
 </a>
@@ -603,6 +612,44 @@
                     </cite>
                 </div>
             </div>
+             <div id="employee2" class="testimonial">
+                <figure>
+                    <%= image_tag "elevator-Mechanic.jpeg", class:"rounded" %>
+                </figure>
+                <div class="testimonial-content p-0">
+                    <p class="lead">“After working for many elevator companies,
+                    <br> I can truly testify that Rocket Elevators is on a whole different level."
+                    </p>
+                    <cite>
+                        Sasha Marinskiy
+                        <span>Lead Elevator Mechanic</span>
+                    </cite>
+                </div>
+            </div>
+             <div id="employee" class="testimonial">
+                <figure>
+                    <%= image_tag "rocket-Elevator-Chef.jpg", class:"rounded" %>
+                </figure>
+                <div class="testimonial-content p-0">
+                    <p class="lead">“Elevators for Elevation”</p>
+                    <cite>
+                        Cole Brazeal
+                        <span>Rocket Elevators Chef</span>
+                    </cite>
+                </div>
+            </div>
+             <div id="employee" class="testimonial">
+                <figure>
+                    <%= image_tag "rocket-Militaries-General.jpg", class:"rounded" %>
+                </figure>
+                <div class="testimonial-content p-0">
+                    <p class="lead">“It is an honor to work for such a forward thinking and high integrity team such as Rocket Elevators.”</p>
+                    <cite>
+                        Ryan Banas
+                        <span>General of Rocket Militaries</span>
+                    </cite>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -789,6 +836,7 @@
 <!-- /Clients -->
 
 <!--contact-->
+ <%= form_with scope: :lead, url: lead_path, local: true do |form| %>
 <section id="contact">
     <div class="container">
 
@@ -802,7 +850,7 @@
         <div class="row">
 
             <!-- FORM -->
-            <%= form_with scope: :lead, url: lead_path, local: true do |form| %>
+           
             <div class="col-md-8 col-sm-8">
 
                 <h3>You can leave us any message by filling up <br/> this form.</h3>
@@ -914,7 +962,7 @@
                 </form>
 
             </div>
-         <% end %>
+
             <!-- /FORM -->
 
             <!-- INFO -->
@@ -942,7 +990,7 @@
 </section>
 <!-- /CONTACT -->
 
-
+         <% end %>
 
 
 

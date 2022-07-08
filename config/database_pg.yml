@@ -4,21 +4,21 @@ default: &default
   adapter: postgresql
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: maksymkryvoshlyk
+  username: codeboxxmac
   password:
 
 development:
   <<: *default
-  database: Rocket_Elevators_Information_System_development
+  database: postgres
 
 test:
   <<: *default
-  database: Rocket_Elevators_Information_System_test
+  database: postgres
 
 #
 production:
   <<: *default
-  database: Rocket_Elevators_Information_System_production
-  url:  <%= ENV["DATABASE_PG_URL"] %>
-  username: maksymkryvoshlyk
-  password: 
+  database: postgres
+  url: <%= ENV["DATABASE_PG_URL"] %>
+  username: codeboxxmac
+  password:
