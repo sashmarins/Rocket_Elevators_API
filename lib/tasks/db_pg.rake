@@ -6,6 +6,14 @@ namespace :pg do
 
   namespace :db do |ns|
 
+    task :stop do
+      Rake::Task["systemctl stop postgresql-14.4.service"].invoke
+    end
+
+    task :start do
+      Rake::Task["systemctl start postgresql-14.4.service"].invoke
+    end
+
     task :drop do
       Rake::Task["db:drop"].invoke
     end
