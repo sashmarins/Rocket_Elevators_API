@@ -1,7 +1,7 @@
-require '/Users/maksymkryvoshlyk/Desktop/SourceControl/Rocket_Elevators_Information_System/app/models/FactQuote.rb'
-require '/Users/maksymkryvoshlyk/Desktop/SourceControl/Rocket_Elevators_Information_System/app/models/FactContact.rb'
-require '/Users/maksymkryvoshlyk/Desktop/SourceControl/Rocket_Elevators_Information_System/app/models/FactElevator.rb'
-require '/Users/maksymkryvoshlyk/Desktop/SourceControl/Rocket_Elevators_Information_System/app/models/DimCustomer.rb'
+require './app/models/FactQuote.rb'
+require './app/models/FactContact.rb'
+require './app/models/FactElevator.rb'
+require './app/models/DimCustomer.rb'
 
 
 namespace :warehouse do
