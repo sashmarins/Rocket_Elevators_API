@@ -5712,7 +5712,7 @@ addressList.each do |requiredAddress|
         # index_customers_on_user_id
     )
 
-    quotes = Quote.create(
+    quotes = Quote.create!(
         user_id: users[:id],
         amount_of_elevators: Faker::Number.number(digits: 2),
         amount_of_floors: Faker::Number.number(digits: 2),
