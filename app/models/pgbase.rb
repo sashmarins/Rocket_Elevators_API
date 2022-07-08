@@ -1,4 +1,5 @@
-require '/Users/maksymkryvoshlyk/Desktop/SourceControl/Rocket_Elevators_Information_System/config/initializers/db_pg.rb'
+require './config/initializers/db_pg.rb'
+
 
 class PgBase < ActiveRecord::Base
     self.abstract_class = true
