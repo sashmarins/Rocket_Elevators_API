@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base 
+  
   rescue_from CanCan::AccessDenied do
     flash[:error] = 'Access denied!'
     redirect_to root_path
@@ -19,4 +20,9 @@ class ApplicationController < ActionController::Base
     # def authorize
     #     redirect_to root_path, alert: "Not authorized" if current_user.try(:admin) == false
     # end
+end
+module YourAppName
+  class Application < Rails::Application
+    config.exceptions_app = self.routes 
+  end
 end
