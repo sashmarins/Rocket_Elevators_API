@@ -2,7 +2,37 @@ require './app/models/FactQuote.rb'
 require './app/models/FactContact.rb'
 require './app/models/FactElevator.rb'
 require './app/models/DimCustomer.rb'
+require 'http'
 
+def every_so_many_seconds(seconds)
+    last_tick = Time.now
+    loop do
+    sleep 0.1
+    if Time.now - last_tick >= seconds
+        last_tick += seconds
+        yield
+    end
+    end
+end
+
+def random_elevator_status
+    elevator_status_random = rand(3)
+    random_status_elevator = ""
+    if elevator_status_random == 0
+        random_status_elevator = "Active"
+    elsif elevator_status_random == 1
+        random_status_elevator = "Inactive"
+    elsif elevator_status_random == 2 
+        random_status_elevator = "Intervention"
+    end
+    return random_status_elevator
+end
+
+
+# def get_channel
+#     HTTP.get('https://slack.com/api/conversations.list')
+#     HTTP.auth(ENV["SLACK_AUTH_TOKEN"])
+# end
 
 namespace :warehouse do
     desc "Transfer data from MySql tables"
@@ -79,6 +109,25 @@ namespace :warehouse do
                         end
                 end
             end    
+
+    end
+
+    task elevator_timer: :environment do
+
+        every_so_many_seconds(1) do
+            random_status_local = random_elevator_status
+            how_many_elevators = Elevator.maximum(:id)
+            @elevator = Elevator.find(rand(1..how_many_elevators))
+            og_status = @elevator[:elevator_status]
+                if @elevator[:elevator_status] != random_status_local
+                    @elevator.update(elevator_status: random_status_local)
+                    puts "updated an elvator status"
+                    HTTP.headers(:accept => "application/json").auth(ENV["SLACK_AUTH_TOKEN"]).post('https://slack.com/api/chat.postMessage', :json => {
+                        :channel => "elevator_operations",
+                        :text => "The Elevator #{@elevator[:id]} with Serial Number #{@elevator[:serial_number]} changed status from #{og_status} to #{@elevator[:elevator_status]}"
+                    })
+                    end
+        end
 
     end
 end
