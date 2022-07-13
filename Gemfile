@@ -116,3 +116,8 @@ gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 gem 'lazy_high_charts', '~> 1.6', '>= 1.6.1'
 gem 'rails_admin_charts', '~> 0.0.12'
 
+#API
+gem "figaro"
+gem 'sendgrid-ruby'
+
+gem 'nokogiri', '~> 1.13', '>= 1.13.6'
