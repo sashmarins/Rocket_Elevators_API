@@ -53,8 +53,8 @@ class LeadController < ApplicationController
                 email: @lead.email,
                 phone: @lead.phone,
                 cc_emails: ["support@codeboxx777.freshdesk.com"],    
-                subject: "new request #{@lead.name} from #{@lead.company_name} #{Time.now}",
-                description: "#{@lead.name} from #{@lead.company_name} can be reached at email #{@lead.email} and at phone number #{@lead.phone}. 
+                subject: "#{@lead.name} from #{@lead.company_name} sent contact request #{Time.now}",
+                description: "#{@lead.name} from #{@lead.company_name} can be reached at email #{@lead.email} and at phone number #{@lead.phone}. <br/>
                             #{@lead.department} has a project named #{@lead.project_name} which would require contribution from Rocket Elevators. <br/>
                             Project description: #{@lead.project_description} <br/>
                             Attached Message: #{@lead.message}"

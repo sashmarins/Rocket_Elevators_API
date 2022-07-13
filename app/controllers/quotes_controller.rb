@@ -46,12 +46,12 @@ class QuotesController < ApplicationController
 
                     quote_payload =  {
                         status: 2,
-                        priority: 1,
+                        priority: 2,
                         type: "Feature Request",
                         email: @quote.user.email,
                         subject: "new quote request from #{@quote.user.company_name} #{Time.now}",
-                        description: "#{@quote.user.company_name} has requested #{@quote.amount_of_elevators} elevators for a #{@quote.building_type} type of building with #{@quote.amount_of_floors} floors.
-                        After installation fees #{@quote.installation_price}, the final prise is #{@quote.final_price}. <br/>
+                        description: "#{@quote.user.company_name} has requested #{@quote.amount_of_elevators} elevators for a #{@quote.building_type} type of building with #{@quote.amount_of_floors} floors. <br/>
+                        The client chose #{@quote.elevator_type} product type. After installation fees #{@quote.installation_price}, the final prise is #{@quote.final_price}. <br/>
                         Contact email #{@quote.user.email}"
                     }
 
