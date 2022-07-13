@@ -116,3 +116,6 @@ gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 gem 'lazy_high_charts', '~> 1.6', '>= 1.6.1'
 gem 'rails_admin_charts', '~> 0.0.12'
 
+gem 'figaro', '~> 1.2'
+gem 'rest-client', '~> 2.1'
+gem 'json'

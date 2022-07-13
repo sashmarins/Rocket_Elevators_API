@@ -14,12 +14,13 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   get "residential", to: "pages#residential"
   get "commercial", to: "pages#commercial"
-  get "quote", to: "pages#quote"
+  get "quote", to: "quotes#new"
   get "index", to: "pages#index"
   post "lead", to: "lead#create"
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
  # get "portfolio", to: "pages#portfolio"
   resources :quotes
+
   
  end
