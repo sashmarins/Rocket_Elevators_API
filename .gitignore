@@ -31,4 +31,7 @@
 
 # Ignore application configuration
 /config/application.yml
+<<<<<<< HEAD
 sendgrid.env
+=======
+>>>>>>> d50253b952634233e0f5e507a864f5c04e2c3f56
