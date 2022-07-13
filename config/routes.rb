@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'errors/not_found'
+  # get 'errors/internal_server_error~'
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
   post "lead", to: "lead#create"
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
+  # patch 'elevators/:status', to: "elevator#update"
  # get "portfolio", to: "pages#portfolio"
   resources :quotes
   

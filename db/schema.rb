@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.string "address"
     t.string "building_admin_name"
     t.string "building_admin_email"
-    t.integer "building_admin_phone"
+    t.string "building_admin_phone"
     t.string "building_tech_name"
     t.string "building_tech_email"
-    t.integer "building_tech_phone"
+    t.string "building_tech_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_buildings_on_customer_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2022_07_05_144501) do
     t.integer "number_of_elevators"
     t.string "customer_created_date"
     t.string "contact_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "email"
     t.text "company_description"
     t.string "service_tech_name"

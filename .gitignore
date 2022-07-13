@@ -28,4 +28,12 @@
 /config/database.yml
 /config/database_pg.yml
 /app/.DS_Store
-/config/database_pg.yml
+
+# Ignore application configuration
+/config/application.yml
+sendgrid.env
+
+
+
+
+

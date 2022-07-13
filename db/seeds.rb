@@ -101,11 +101,11 @@ def random_elevator_status
     elevator_status_random = rand(3)
     random_status_elevator = ""
     if elevator_status_random == 0
-        random_status_elevator = "Idle"
+        random_status_elevator = "Active"
     elsif elevator_status_random == 1
-        random_status_elevator == "Stopped"
+        random_status_elevator = "Inactive"
     elsif elevator_status_random == 2 
-        random_status_elevator == "Moving"
+        random_status_elevator = "Intervention"
     end
     return random_status_elevator
 end
@@ -235,61 +235,61 @@ addressList = [
             "lng": -85.700243
         }
     },
-    {
-        "address1": "18 Densmore Drive",
-        "address2": "",
-        "city": "Essex",
-        "state": "VT",
-        "postalCode": "05452",
-        "coordinates": {
-            "lat": 44.492953,
-            "lng": -73.101883
-        }
-    },
-    {
-        "address1": "637 Britannia Drive",
-        "address2": "",
-        "city": "Vallejo",
-        "state": "CA",
-        "postalCode": "94591",
-        "coordinates": {
-            "lat": 38.10476999999999,
-            "lng": -122.193849
-        }
-    },
-    {
-        "address1": "5601 West Crocus Drive",
-        "address2": "",
-        "city": "Glendale",
-        "state": "AZ",
-        "postalCode": "85306",
-        "coordinates": {
-            "lat": 33.6152469,
-            "lng": -112.179737
-        }
-    },
-    {
-        "address1": "5403 Illinois Avenue",
-        "address2": "",
-        "city": "Nashville",
-        "state": "TN",
-        "postalCode": "37209",
-        "coordinates": {
-            "lat": 36.157077,
-            "lng": -86.853827
-        }
-    },
-    {
-        "address1": "8821 West Myrtle Avenue",
-        "address2": "",
-        "city": "Glendale",
-        "state": "AZ",
-        "postalCode": "85305",
-        "coordinates": {
-            "lat": 33.5404296,
-            "lng": -112.2488391
-        }
-    },
+    # {
+    #     "address1": "18 Densmore Drive",
+    #     "address2": "",
+    #     "city": "Essex",
+    #     "state": "VT",
+    #     "postalCode": "05452",
+    #     "coordinates": {
+    #         "lat": 44.492953,
+    #         "lng": -73.101883
+    #     }
+    # },
+    # {
+    #     "address1": "637 Britannia Drive",
+    #     "address2": "",
+    #     "city": "Vallejo",
+    #     "state": "CA",
+    #     "postalCode": "94591",
+    #     "coordinates": {
+    #         "lat": 38.10476999999999,
+    #         "lng": -122.193849
+    #     }
+    # },
+    # {
+    #     "address1": "5601 West Crocus Drive",
+    #     "address2": "",
+    #     "city": "Glendale",
+    #     "state": "AZ",
+    #     "postalCode": "85306",
+    #     "coordinates": {
+    #         "lat": 33.6152469,
+    #         "lng": -112.179737
+    #     }
+    # },
+    # {
+    #     "address1": "5403 Illinois Avenue",
+    #     "address2": "",
+    #     "city": "Nashville",
+    #     "state": "TN",
+    #     "postalCode": "37209",
+    #     "coordinates": {
+    #         "lat": 36.157077,
+    #         "lng": -86.853827
+    #     }
+    # },
+    # {
+    #     "address1": "8821 West Myrtle Avenue",
+    #     "address2": "",
+    #     "city": "Glendale",
+    #     "state": "AZ",
+    #     "postalCode": "85305",
+    #     "coordinates": {
+    #         "lat": 33.5404296,
+    #         "lng": -112.2488391
+    #     }
+    # },
     # {
     #     "address1": "2203 7th Street Road",
     #     "address2": "",
@@ -5692,7 +5692,7 @@ addressList.each do |requiredAddress|
         password: "password123"
     )
     # puts "============================"
-    puts requiredAddress[:address1]
+    # puts requiredAddress[:address1]
     # puts "============================"
     customer = Customer.create!(
         user_id: users[:id],
@@ -5710,6 +5710,18 @@ addressList.each do |requiredAddress|
         updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
         # index_customers_on_address_id
         # index_customers_on_user_id
+    )
+
+    quotes = Quote.create!(
+        user_id: users[:id],
+        amount_of_elevators: Faker::Number.number(digits: 2),
+        amount_of_floors: Faker::Number.number(digits: 2),
+        final_price: Faker::Number.number(digits: 6),
+        building_type: ["Residential", "Corporate", "Commercial", "Hybrid"].sample(1),
+        elevator_type: ["Standard", "Premium", "Excelium"].sample(1),
+        installation_price: ["13%", "10%", "16%"].sample(1),
+        created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
+        updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
     )
 
     
@@ -5776,6 +5788,7 @@ addressList.each do |requiredAddress|
         # index_columns_on_battery_id
     )
 
+    3.times do
     Elevator.create!(
         column_id: columns[:id],
         serial_number: Faker::IDNumber.chilean_id,
@@ -5790,4 +5803,7 @@ addressList.each do |requiredAddress|
         updated_at: Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
         # index_elevators_on_column_id
     )
+    end
 end
+
+puts "finished seeding elevators"
