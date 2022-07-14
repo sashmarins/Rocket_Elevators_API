@@ -35,3 +35,16 @@ in the Rocket_Elevator_Information_System directory, do command ```rails s``` to
 To run the run the queries, navigate to the postgresql terminal by running the command ```psql postgres``` in the terminal.
 There are 3 queries that can be ran in the root of the project, which are named question1.sql, question2.sql and question3.sql.
 to run the query, simply input the file name.
+
+=========================================
+---------------API-----------------------
+=========================================
+We use figaro gem for setting environment variables.
+The gem reads a config/application.yml file and sets environment variables before anything else is configured in the Rails application.
+You can add environment variables as key/value pairs 
+
+
+* FRESHDESK :
+When a customer sends quote request or contact request, new ticket is created on FreshDesk API, domain name codeboxx777.freshdesk.com 
+The ticket contanins client's contact information and information that the client fills up in quote request or contact form, which customer support of Rocket Elevators can work with, in order to complete client's request.
+gems used: 'rest-client', 'json'

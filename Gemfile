@@ -134,3 +134,7 @@ gem 'twilio-ruby'
 
 #HTTP
 gem "http"
+
+#POLLY
+gem 'aws-sdk-s3'
+gem 'aws-sdk-polly', '~> 1.0.0.rc3'
