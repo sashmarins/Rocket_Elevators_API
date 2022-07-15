@@ -1,5 +1,5 @@
 RailsAdmin.config do |config|
-  require Rails.root.join('lib', 'rails_admin', 'google.rb')
+  # require Rails.root.join('lib', 'rails_admin', 'google.rb')
 
   ### Popular gems integration
 
@@ -31,7 +31,6 @@ RailsAdmin.config do |config|
   # end
 
   config.actions do
-    all
     dashboard                     # mandatory
     index                         # mandatory
     new
@@ -41,7 +40,7 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
-    google
+    # google
 
     ## With an audit adapter, you can add:
     # history_index
