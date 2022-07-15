@@ -151,7 +151,6 @@ ActiveRecord::Schema.define(version: 2022_07_14_025612) do
     t.string "project_description"
     t.string "department"
     t.string "message"
-    t.binary "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

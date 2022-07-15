@@ -114,7 +114,7 @@ namespace :warehouse do
 
     task elevator_timer: :environment do
 
-        every_so_many_seconds(1) do
+        every_so_many_seconds(300) do
             random_status_local = random_elevator_status
             how_many_elevators = Elevator.maximum(:id)
             @elevator = Elevator.find(rand(1..how_many_elevators))

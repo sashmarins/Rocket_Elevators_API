@@ -40,18 +40,17 @@ class LeadController < ApplicationController
         attachment = params["attachment"]
 
         @lead = Lead.new(lead_params)
-        @lead.name = contact_name
-        @lead.email = email
-        @lead.phone = phone
-        @lead.company_name = company_name
-        @lead.project_name = project_name
-        @lead.project_description = project_description
-        @lead.department = department
-        @lead.message = message
-        @lead.attachment = attachment
+
+        @lead.name = params["name"]
+        @lead.email = params["email"]
+        @lead.phone = params["phone"]
+        @lead.company_name = params["company"]
+        @lead.project_name = params["project_name"]
+        @lead.project_description = params["project_description"]
+        @lead.department = params["department"]
+        @lead.message = params["message"]
 
         @lead.save!
-
         if @lead.save
             redirect_back fallback_location: root_path, notice: "Your contact request has been sent successfully!"
 
@@ -107,12 +106,14 @@ class LeadController < ApplicationController
         puts response.status_code
         puts response.body
         puts response.headers
+        puts mail   
+        puts ENV['SENDGRID_API_KEY']
             
     end
 
     private
     def lead_params
-        params.fetch(:lead, {})
+        params.require(:lead).permit(:name, :email, :phone, :company_name, :project_name, :project_description, :department, :message, :attachment)
     end
 end
 

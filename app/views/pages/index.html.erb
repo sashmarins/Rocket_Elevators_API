@@ -193,7 +193,7 @@
                     </figure>
 
                     <div class="item-box-desc">
-                        <h3>Model #RE001 / 1-2 Passangers</h3>
+                        <h3>Model #RE001 / 1-2 Passengers</h3>
                         <ul class="list-inline categories m-0">
                             <li><a href="#">Residential</a></li>
                             <li><a href="#">Modern</a></li>
@@ -227,7 +227,7 @@
                     </figure>
 
                     <div class="item-box-desc">
-                        <h3>Model #RE002 / 1-4 Passangers</h3>
+                        <h3>Model #RE002 / 1-4 Passengers</h3>
                         <ul class="list-inline categories m-0">
                             <li><a href="#">Residential</a></li>
                             <li><a href="#">Modern</a></li>
@@ -294,7 +294,7 @@
                     </figure>
 
                     <div class="item-box-desc">
-                        <h3>Model #COR011 / 1-12 Passangers</h3>
+                        <h3>Model #COR011 / 1-12 Passengers</h3>
                         <ul class="list-inline categories m-0">
                             <li><a href="#">Corporate</a></li>
                             <li><a href="#">Contemporary</a></li>
@@ -362,7 +362,7 @@
                     </figure>
 
                     <div class="item-box-desc">
-                        <h3>Model #RE024 / 1-6 Passangers / Wheelchair accessible</h3>
+                        <h3>Model #RE024 / 1-6 Passengers / Wheelchair accessible</h3>
                         <ul class="list-inline categories m-0">
                             <li><a href="#">Residential</a></li>
                             <li><a href="#">Traditional</a></li>
@@ -396,7 +396,7 @@
                     </figure>
 
                     <div class="item-box-desc">
-                        <h3>Model #COR-45 / 1-8 Passangers</h3>
+                        <h3>Model #COR-45 / 1-8 Passengers</h3>
                         <ul class="list-inline categories m-0">
                             <li><a href="#">Corporate</a></li>
                             <li><a href="#">Transitional</a></li>
@@ -943,14 +943,20 @@
 
                         <div class="row">
                             <div class="col-md-10">
-                                <label for="attachment">File Attachment</label>
+                                <%# <label for="attachment">File Attachment</label>
 
                                 <!-- custom file upload -->
                                 <input class="custom-file-upload" type="file" id="file" name="attachment" id="attachment" data-btn-text="Select a File" />
-                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small> %>
+                                <label for="message">Attachment *</label>
+                                 <p>
+                                     <%= form.file_field :attachment %>
+                                 </p>
 
                             </div>
                         </div>
+
+
                     </fieldset>
 
                     <div class="row">
