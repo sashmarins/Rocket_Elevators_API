@@ -1,5 +1,5 @@
 # require 'aws-sdk-polly'
-module PollyHelper
+# module PollyHelper
     user_name = User.employee.first_name.count.to_s
     amount_of_elvtrs = Elevator.count
     amount_of_bldngs = Building.count.to_s
