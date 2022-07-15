@@ -943,14 +943,20 @@
 
                         <div class="row">
                             <div class="col-md-10">
-                                <label for="attachment">File Attachment</label>
+                                <%# <label for="attachment">File Attachment</label>
 
                                 <!-- custom file upload -->
                                 <input class="custom-file-upload" type="file" id="file" name="attachment" id="attachment" data-btn-text="Select a File" />
-                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small> %>
+
+                                 <p>
+                                     <%= form.file_field :attachment %>
+                                 </p>
 
                             </div>
                         </div>
+
+
                     </fieldset>
 
                     <div class="row">
