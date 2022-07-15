@@ -13,7 +13,7 @@ class Elevator < ApplicationRecord
             message = @client.messages
             .create(
                 from: '+19794757363',
-                body: 'You up? -Gojo',
+                body: "The status of elevator #{self.serial_number} has been changed to 'Intervention'",
                 to: '+16034184542'
             )
             puts message.sid

@@ -1,0 +1,7 @@
+
+en:
+  admin:
+    actions:
+      root:
+        google:
+          menu: 'Google'

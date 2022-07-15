@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post "lead", to: "lead#create"
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
+  get 'google', to: "pages#google"
   # patch 'elevators/:status', to: "elevator#update"
  # get "portfolio", to: "pages#portfolio"
   resources :quotes
