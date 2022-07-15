@@ -116,6 +116,10 @@ gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 gem 'lazy_high_charts', '~> 1.6', '>= 1.6.1'
 gem 'rails_admin_charts', '~> 0.0.12'
 
+#SENDGRID
+gem 'sendgrid-ruby'
+gem 'nokogiri', '~> 1.13', '>= 1.13.6'
+
 #FIGARO
 gem 'figaro'
 
@@ -130,3 +134,5 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 #dropbox
 gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
+#AMAZON POLLY
+gem 'aws-sdk-polly', '~> 1.56'
