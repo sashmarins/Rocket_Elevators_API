@@ -58,7 +58,7 @@ class LeadController < ApplicationController
         puts response.status_code
         puts response.body
         puts response.headers
-        puts sg
+        puts mail   
         puts ENV['SENDGRID_API_KEY']
             
     end
