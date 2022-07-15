@@ -5666,6 +5666,7 @@ addressList = [
 ]
 
 # 10.times do
+
 Lead.populate 500 do |l|
     l.name = Faker::FunnyName.name
     l.company_name = Faker::Company.name
@@ -5675,7 +5676,7 @@ Lead.populate 500 do |l|
     l.project_description = Faker::Marketing.buzzwords
     l.department = Faker::Job.field
     l.message = Faker::IndustrySegments.industry
-    l.attachment = Faker::Company.logo
+    # l.attachment = Faker::Company.logo
     l.created_at = Faker::Date.between(from: '2002-02-20', to: '2018-09-25')
     l.updated_at = Faker::Date.between(from: '2018-09-26', to: '2022-07-06')
 end
