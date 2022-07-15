@@ -23,5 +23,6 @@ Rails.application.routes.draw do
  # get "portfolio", to: "pages#portfolio"
   resources :quotes
 
+  get "polly", to: "pages#polly"
   
  end
