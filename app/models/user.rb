@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :quote
+  has_one :employee
   include RailsAdminCharts
 
   def self.graph_data since=30.days.ago

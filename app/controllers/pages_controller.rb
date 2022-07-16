@@ -17,20 +17,6 @@ class PagesController < ApplicationController
     def quote
     end
 
-    def polly
-        polly = Aws::Polly::Client.new
-        
-        resp = polly.synthesize_speech({
-            output_format: "mp3",
-            text: "Rocket Elevators, yes yes",
-            voice_id: "Joanna",
-            # response_target: "/public/speech2.mp3"
-        
-            })
-            IO.copy_stream(resp.audio_stream, "speech3.mp3")
-            File.rename "speech3.mp3", "public/speech3.mp3"
-    end
-
     def reado
          
     end

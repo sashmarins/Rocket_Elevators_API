@@ -1,3 +1,11 @@
+RailsAdmin::Engine.routes.draw do
+  scope protocol: 'https://', constraints: {protocol: 'https://'} do
+    resources :radmin
+  end
+
+  get "polly", to: "rails_admin.polly_path"
+end
+
 Rails.application.routes.draw do
   # get 'errors/not_found'
   # get 'errors/internal_server_error~'
@@ -23,6 +31,9 @@ Rails.application.routes.draw do
  # get "portfolio", to: "pages#portfolio"
   resources :quotes
 
-  get "polly", to: "pages#polly"
+  # get "polly", to: "rails_admin/main#amazon"
+
+  # resources :polly
+  # get "amazon", to: "rails_admin/main#amazon"
   
  end

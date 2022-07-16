@@ -1,19 +1,20 @@
 # require 'aws-sdk-polly'
 # module PollyHelper
-    user_name = User.employee.first_name.count.to_s
+    user_name = current_user.employee.first_name
     amount_of_elvtrs = Elevator.count
     amount_of_bldngs = Building.count.to_s
     amount_of_cstmrs = Customer.count.to_s
     inactive_elvtrs = Elevator.where(elevator_status: "Inactive").count
-    current_quotes = #????
+    current_quotes = Quote.count
     current_leads = Lead.count.to_s
     amount_of_bttrs = Battery.count.to_s
     amount_of_cities = Address.city.count
+    
 
-    polly_text = "Greetings, #{user_name}! There are currently #{amount_of_elvtrs} deployed in #{amount_of_bldngs} of your #{amount_of_cstmrs}.
-                Currently, #{inactive_elvtrs} are not in Running Status and are being serviced.
-                You currently have #{current_quotes} awaiting processing and #{current_leads} in your contact requests
-                #{amount_of_bttrs} are deployed across #{amount_of_cities}."
+    polly_text = " Greetings,#{user_name}! There are currently #{amount_of_elvtrs} elevators deployed in #{amount_of_bldngs} buildings of your #{amount_of_cstmrs} customers.
+                Currently, #{inactive_elvtrs} elevators are not in Running Status and are being serviced.
+                You currently have #{current_quotes} quotes awaiting processing and #{current_leads} leads in your contact requests.
+                #{amount_of_bttrs} batteries are deployed across #{amount_of_cities} cities."
 
 
     def polly_speak 
