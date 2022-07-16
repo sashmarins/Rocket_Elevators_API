@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   scope '/employee' do
     resources :users
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
   get "residential", to: "pages#residential"
   get "commercial", to: "pages#commercial"
@@ -27,13 +26,8 @@ Rails.application.routes.draw do
   post "lead", to: "lead#create"
   get "login", to: "pages#login"
   get 'users/:id' => 'users#show'
-  # patch 'elevators/:status', to: "elevator#update"
- # get "portfolio", to: "pages#portfolio"
-  resources :quotes
-
-  # get "polly", to: "rails_admin/main#amazon"
-
-  # resources :polly
-  # get "amazon", to: "rails_admin/main#amazon"
   
- end
+  resources :quotes
+  
+end
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
