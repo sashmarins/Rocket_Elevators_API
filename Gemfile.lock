@@ -164,6 +164,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gmaps4rails (2.1.2)
     haml (5.2.2)
       temple (>= 0.8.0)
       tilt
@@ -410,6 +411,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass (~> 4.3.0)
   friendly_id (~> 5.4, >= 5.4.2)
+  gmaps4rails
   highcharts-rails (~> 6.0, >= 6.0.3)
   http
   image_processing (>= 1.2)
