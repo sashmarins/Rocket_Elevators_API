@@ -67,7 +67,7 @@ class LeadController < ApplicationController
                             Project description: #{@lead.project_description} <br/>
                             Attached Message: #{@lead.message}"
                 
-                # attachments: [@lead.attachment]
+                
                 }
                 
                 freshdesk_api_path = 'api/v2/tickets'
@@ -110,6 +110,11 @@ class LeadController < ApplicationController
         puts ENV['SENDGRID_API_KEY']
             
     end
+
+    # private
+    # def lead_params
+    #     params.fetch(:lead, {})
+    # end
 
     private
     def lead_params
