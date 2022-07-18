@@ -1,0 +1,2 @@
+class Factintervention < PgBase
+end

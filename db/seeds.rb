@@ -5762,6 +5762,7 @@ addressList.each do |requiredAddress|
     )
 
     batteries = Battery.create!(
+        employee_id: rand(1..10),
         building_id: buildings[:id],
         building_type: random_building_type,
         battery_status: random_battery_status,
