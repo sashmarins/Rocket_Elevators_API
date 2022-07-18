@@ -24,4 +24,5 @@ class Lead < ApplicationRecord
 
 end
 
-# attachmentpath = ActiveStorage::Blob.service.path_for(attachment.key)
+# use some splicing to edit attachment path potentially?
+# somehow 

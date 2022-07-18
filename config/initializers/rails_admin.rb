@@ -1,5 +1,3 @@
-require Rails.root.join('lib', 'rails_admin', 'amazon.rb')
-
 RailsAdmin.config do |config|
   require Rails.root.join('lib', 'rails_admin', 'google.rb')
 

@@ -433,6 +433,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass (~> 4.3.0)
   friendly_id (~> 5.4, >= 5.4.2)
+  gmaps4rails
   highcharts-rails (~> 6.0, >= 6.0.3)
   http
   image_processing (>= 1.2)
