@@ -2,6 +2,8 @@ require 'sendgrid-ruby'
 include SendGrid
 require 'rubygems'
 require 'nokogiri' 
+require 'mailjet'
+
 
 class LeadController < ApplicationController
     def index 
@@ -40,6 +42,38 @@ class LeadController < ApplicationController
         redirect_back fallback_location: root_path, notice: "Success!"
         end
         
+        require 'mailjet'
+        Mailjet.configure do |config|
+        config.api_key = ENV['MAILJET_API_KEY']
+        config.secret_key = ENV['MAILJET_SECRET_KEY']
+        config.api_version = "v3.1"
+        end
+        variable = Mailjet::Send.create(messages: [{
+          'From'=> {
+            'Email'=> 'ryanzbanas@gmail.com',
+            'Name'=> 'Rocket Elevators'
+          },
+          'To'=> [
+            {
+             'Email'=> @lead.email,
+             'Name'=> @lead.name
+            }
+          ],
+         'Subject'=> "Greetings #{@lead.name}",
+          'TextPart'=> 'Rocket Elevators',
+         'HTMLPart'=>  " <img src='https://maksymkproject.xyz/assets/R2-3c6296bf2343b849b947f8ccfce0de61dd34ba7f9e2a23a53d0a743bc4604e3c.png' alt='RE logo' height='20%'>        
+             <h1> Greetings #{@lead.name}</h1>
+             <p>We thank you for contacting Rocket Elevators to discuss the opportunity to contribute to your project #{@lead.project_name}.</p>
+             <p>A representative from our team will be in touch with you very soon. We look forward to demonstrating the value of our solutions and helping you choose the appropriate product given your requirements.</p>
+             <p>We’ll Talk soon. </p>
+             <p>The Rocket Team.</p>
+             ",
+          'CustomID' => 'AppGettingStartedTest'
+        }]
+        )
+        p variable.attributes['Messages']
+    
+            
     end
 
     private

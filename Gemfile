@@ -138,3 +138,6 @@ gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
 gem 'aws-sdk-polly', '~> 1.56'
 #GMAPS4RAILS
 gem 'gmaps4rails'
+
+# Mailjet
+gem 'mailjet'
