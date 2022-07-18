@@ -1,7 +1,8 @@
-
 en:
   admin:
     actions:
-      root:
-        google:
-          menu: 'Google'
+      google:
+        menu: 'Google'
+      amazon:
+        menu: 'amazon'
+        title: 'amazon'

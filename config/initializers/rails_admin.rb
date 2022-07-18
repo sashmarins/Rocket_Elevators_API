@@ -1,3 +1,5 @@
+require Rails.root.join('lib', 'rails_admin', 'amazon.rb')
+
 RailsAdmin.config do |config|
   require Rails.root.join('lib', 'rails_admin', 'google.rb')
 
@@ -31,6 +33,7 @@ RailsAdmin.config do |config|
   # end
 
   config.actions do
+
     all
     # dashboard                     # mandatory
     # index                         # mandatory
@@ -43,6 +46,7 @@ RailsAdmin.config do |config|
     # delete
     # show_in_app
     google
+    amazon
 
     ## With an audit adapter, you can add:
     # history_index
