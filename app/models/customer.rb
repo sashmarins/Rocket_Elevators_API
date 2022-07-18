@@ -1,6 +1,5 @@
 class Customer < ApplicationRecord
     belongs_to :user, optional: true
-
     #if customer email == lead.email
     #create dropbox directory
     #if there is an attachment associated with this lead

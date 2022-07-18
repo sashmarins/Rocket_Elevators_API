@@ -1,7 +1,6 @@
-require Rails.root.join('lib', 'rails_admin', 'amazon.rb')
-
 RailsAdmin.config do |config|
   require Rails.root.join('lib', 'rails_admin', 'google.rb')
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -32,10 +31,12 @@ RailsAdmin.config do |config|
   # end
 
   config.actions do
+
     all
     # dashboard                     # mandatory
     # index                         # mandatory
     # new
+    # create
     # export
     # bulk_delete
     # show
