@@ -1,3 +1,4 @@
+require 'aws-sdk-polly'
 class PagesController < ApplicationController
     # before_action :authorize!, :login
     rescue_from CanCan::AccessDenied do

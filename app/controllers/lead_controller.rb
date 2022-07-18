@@ -1,3 +1,5 @@
+require 'rest_client'
+require 'json'
 require 'sendgrid-ruby'
 include SendGrid
 require 'rubygems'
@@ -6,14 +8,15 @@ require 'mailjet'
 
 
 class LeadController < ApplicationController
+    
     def index 
         @lead = Lead.all
     end
-
+    
     def show 
         @lead = Lead.find(params[:id])
     end
-
+    
     def new
         @lead = Lead.new
     end
@@ -24,6 +27,19 @@ class LeadController < ApplicationController
     # end
     
     def create 
+        freshdesk_domain = ENV["BASE_URL"]
+        user_name_or_api_key =  ENV["FRESH_KEY"]
+        password_or_x = "X"
+        
+        contact_name = params["name"]
+        email = params["email"]
+        phone = params["phone"]
+        company_name = params["company"]
+        project_name = params["project_name"]
+        project_description = params["project_description"]
+        department = params["department"]
+        message = params["message"]
+        attachment = params["attachment"]
 
         @lead = Lead.new(lead_params)
 
@@ -38,8 +54,40 @@ class LeadController < ApplicationController
 
         @lead.save!
         if @lead.save
-        redirect_back fallback_location: root_path, notice: "Success!"
+            redirect_back fallback_location: root_path, notice: "Your contact request has been sent successfully!"
+
+            multipart_payload =  {
+                status: 2,
+                priority: 1,
+                type: "Question",
+                email: @lead.email,
+                phone: @lead.phone,
+                cc_emails: ["support@codeboxx777.freshdesk.com"],    
+                subject: "#{@lead.name} from #{@lead.company_name} sent contact request #{Time.now}",
+                description: "#{@lead.name} from #{@lead.company_name} can be reached at email #{@lead.email} and at phone number #{@lead.phone}. <br/>
+                            #{@lead.department} has a project named #{@lead.project_name} which would require contribution from Rocket Elevators. <br/>
+                            Project description: #{@lead.project_description} <br/>
+                            Attached Message: #{@lead.message}"
+                
+                
+                }
+                
+                freshdesk_api_path = 'api/v2/tickets'
+                freshdesk_api_url  = "https://codeboxx777.freshdesk.com/#{freshdesk_api_path}"
+
+                site = RestClient::Resource.new(freshdesk_api_url, user_name_or_api_key, password_or_x)
+ 
+                begin
+                    response = site.post(multipart_payload.to_json, {content_type: :json, accept: :json})
+                    # RestClient.post freshdesk_api_url, multipart_payload.to_json, {content_type: :json, accept: :json}
+                    puts "response_code: #{response.code} \nLocation Header: #{response.headers[:Location]} \nresponse_body: #{response.body} \n"
+                  rescue RestClient::Exception => exception
+                    puts 'API Error: Your request is not successful. If you are not able to debug this error properly, mail us at support@freshdesk.com with the follwing X-Request-Id'
+                    puts "X-Request-Id : #{exception.response.headers[:x_request_id]}"
+                    puts "Response Code: #{exception.response.code} \nResponse Body: #{exception.response.body} \n"
+                end
         end
+                
         
         # from = Email.new(email: 'zaltima99@gmail.com')
         # to = Email.new(email: @lead.email)
@@ -96,6 +144,11 @@ class LeadController < ApplicationController
     
             
     end
+
+    # private
+    # def lead_params
+    #     params.fetch(:lead, {})
+    # end
 
     private
     def lead_params
