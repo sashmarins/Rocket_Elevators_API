@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   has_many :quote
 
+  has_one :employee
+
+
+
   def self.graph_data since=30.days.ago
     [
       {

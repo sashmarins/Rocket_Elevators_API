@@ -62,23 +62,33 @@ module RailsAdmin
 
         register_instance_option :controller do
           proc do
-            @history = @auditing_adapter&.latest(@action.auditing_versions_limit) if @action.history?
-            if @action.statistics?
-              model_configs = RailsAdmin::Config.visible_models(controller: self)
+            puts "=============POLLY============"
+            user_name = current_user.employee.first_name
+            amount_of_elvtrs = Elevator.count
+            amount_of_bldngs = Building.count
+            amount_of_cstmrs = Customer.count
+            inactive_elvtrs = Elevator.where(elevator_status: "Inactive").count
+            current_quotes = Quote.count
+            current_leads = Lead.count
+            amount_of_bttrs = Battery.count
+            amount_of_cities = Address.count
 
-              @abstract_models = model_configs.map(&:abstract_model)
-              @most_recent_created = {}
-              @count = {}
-              @max = 0
-              model_configs.each do |config|
-                scope = @authorization_adapter&.query(:index, config.abstract_model)
-                current_count = config.abstract_model.count({}, scope)
-                @max = current_count > @max ? current_count : @max
-                name = config.abstract_model.model.name
-                @count[name] = current_count
-              end
-            end
-            render @action.template_name, status: @status_code || :ok
+            polly_text = " Greetings,#{user_name}! There are currently #{amount_of_elvtrs} elevators deployed in #{amount_of_bldngs} buildings of your #{amount_of_cstmrs} customers.
+            Currently, #{inactive_elvtrs} elevators are not in Running Status and are being serviced.
+            You currently have #{current_quotes} quotes awaiting processing and #{current_leads} leads in your contact requests.
+            #{amount_of_bttrs} batteries are deployed across #{amount_of_cities} cities. Have a wonderful shift!"
+
+            polly = Aws::Polly::Client.new
+
+            resp = polly.synthesize_speech({
+                output_format: "mp3",
+                text: "#{polly_text}",
+                voice_id: "Joanna",
+                # response_target: "/public/speech2.mp3"
+            
+                })
+                IO.copy_stream(resp.audio_stream, "speech3.mp3")
+                File.rename "speech3.mp3", "public/speech3.mp3"
           end
         end
 
