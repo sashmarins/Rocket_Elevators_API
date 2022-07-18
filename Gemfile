@@ -142,4 +142,3 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 #dropbox
 gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
-
