@@ -14,7 +14,7 @@ class Elevator < ApplicationRecord
             .create(
                 from: '+19794757363',
                 body: "The status of elevator #{self.serial_number} has been changed to 'Intervention'",
-                to: '+16034184542'
+                to: '+18138178913'
             )
             puts message.sid
         end

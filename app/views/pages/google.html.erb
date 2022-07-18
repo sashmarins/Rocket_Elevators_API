@@ -36,6 +36,7 @@
         title: "Uluru (Ayers Rock)",
     });
 
+   
     marker.addListener("click", () => {
         infowindow.open({
         anchor: marker,
@@ -47,6 +48,11 @@
     }
 
     window.initMap = initMap;
+
+    // The markers position
+
+infowindow.open (map, marker);
+
     </script>
     </body>
 </html>

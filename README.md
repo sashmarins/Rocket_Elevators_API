@@ -28,6 +28,13 @@ Navigate to the Rocket_Elevator_Information_System in the terminal, and to creat
 ```rake pg:db:migrate```
 Then run ```rake warehouse:seed_wh```
 
+*Twilio Set Up
+First, to set up twilio you will need to go into your 'Gemfile' and add the 'twilio-ruby' gem
+then navigate to your terminal and run 'bundle install'
+Next, you will add your twilio provided api key and sid to your secured API key file
+then implement the required information provided by twilio into your 'elevator.rb' along with the necessary code.
+Finally, to test your twilio set up, change the status of an Elevator to 'Intervention' and a sms should be sent, and the designated phone number should receive the text.
+
 * How to run the test suite
 in the Rocket_Elevator_Information_System directory, do command ```rails s``` to begin running the testserver, in the in the browser go to localhost:(whatever ip you designated) {default is 3000}
 

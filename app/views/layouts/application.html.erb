@@ -128,11 +128,7 @@
                                             <%= link_to "ADMIN", rails_admin_path %>
                                         <% end %>
                                     </li>
-                                    <li>
-                                    <% if user_signed_in? && current_user.is_admin == true %>
-                                            <%= link_to "GOOGLE", google_path %>
-                                        <% end %>
-                                    </li>
+                            
                                 
                         </ul>
 
