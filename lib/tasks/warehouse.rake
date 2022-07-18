@@ -95,6 +95,8 @@ namespace :warehouse do
                 end
                 puts "Done Seeding Fact Elevators"
 
+
+
                 Customer.all.each do |customer|
                     Address.all.each do |address|
                         if address.customer_id == customer.id
@@ -109,6 +111,39 @@ namespace :warehouse do
                         end
                 end
             end    
+
+                Address.all.each do |address| 
+                    if address.customer_id == customer.id
+                    Building.all.each do |building| 
+                        if building.customer_id == customer.id
+                        Battery.all.each do |battery|
+                            if battery.building_id == building.id
+                            Column.all.each do |column|
+                                if column.battery_id == battery.id
+                                Elevator.all.each do |elevator|
+                                    if elevator.status == "Intervention"
+                                    Factintervention.create!(
+                                        employee_id: battery.employee_id,
+                                        building_id: building.id,
+                                        battery_id: battery.id,
+                                        column_id: column.id,
+                                        elevator_id: elevator.id,
+                                        intervention_started: elevator.updated_at,
+                                        intervention_ended: nil,
+                                        intervention_result: nil,
+                                        intervention_report: Faker::Books::Dune.quote,
+                                        intervention_status: "In Progress"
+                                    )
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+end
 
     end
 

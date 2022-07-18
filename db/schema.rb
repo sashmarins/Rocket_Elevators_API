@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_172103) do
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.bigint "building_id", null: false
+    t.bigint "employee_id"
     t.string "building_type"
     t.string "battery_status"
     t.string "date_of_commission"
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_172103) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["building_id"], name: "index_batteries_on_building_id"
+    t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -189,6 +191,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_172103) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "customers"
   add_foreign_key "batteries", "buildings"
+  add_foreign_key "batteries", "employees"
   add_foreign_key "building_details", "buildings"
   add_foreign_key "buildings", "customers"
   add_foreign_key "columns", "batteries"
