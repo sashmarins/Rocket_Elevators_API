@@ -136,3 +136,5 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
 #AMAZON POLLY
 gem 'aws-sdk-polly', '~> 1.56'
+#GMAPS4RAILS
+gem 'gmaps4rails'

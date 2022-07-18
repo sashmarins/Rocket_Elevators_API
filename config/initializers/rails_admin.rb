@@ -1,5 +1,5 @@
 RailsAdmin.config do |config|
-
+  require Rails.root.join('lib', 'rails_admin', 'google.rb')
   ### Popular gems integration
 
   ## == Devise ==
@@ -30,15 +30,17 @@ RailsAdmin.config do |config|
   # end
 
   config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
-    new
-    export
-    bulk_delete
-    show
-    edit
-    delete
-    show_in_app
+    all
+    # dashboard                     # mandatory
+    # index                         # mandatory
+    # new
+    # export
+    # bulk_delete
+    # show
+    # edit
+    # delete
+    # show_in_app
+    google
 
     ## With an audit adapter, you can add:
     # history_index
