@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
-  require Rails.root.join('lib', 'rails_admin', 'google.rb', 'amazon.rb')
+  require Rails.root.join('lib', 'rails_admin', 'google.rb')
+  require Rails.root.join('lib', 'rails_admin', 'amazon.rb')
 
   ### Popular gems integration
 
