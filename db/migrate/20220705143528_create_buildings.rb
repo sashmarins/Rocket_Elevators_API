@@ -2,7 +2,9 @@ class CreateBuildings < ActiveRecord::Migration[5.2]
   def change
     create_table :buildings do |t|
       t.references :customer, null: false, foreign_key: true
+      t.references :employee, foreign_key: true
       t.string :address
+      t.string :status
       t.string :building_admin_name
       t.string :building_admin_email
       t.string :building_admin_phone

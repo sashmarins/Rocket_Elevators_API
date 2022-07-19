@@ -2,6 +2,7 @@ require './app/models/FactQuote.rb'
 require './app/models/FactContact.rb'
 require './app/models/FactElevator.rb'
 require './app/models/DimCustomer.rb'
+require './app/models/FactIntervention.rb'
 require 'http'
 
 def every_so_many_seconds(seconds)
@@ -37,7 +38,7 @@ end
 namespace :warehouse do
     desc "Transfer data from MySql tables"
     task seed_wh: :environment do
-        PgBase.connection.execute("TRUNCATE fact_quotes, fact_contacts, fact_elevators, dim_customers RESTART IDENTITY")
+        PgBase.connection.execute("TRUNCATE fact_quotes, fact_contacts, fact_elevators, dim_customers, fact_interventions RESTART IDENTITY")
             User.all.each do |user|
                 Quote.all.each do |quote|
                     if quote.user_id == user.id
@@ -112,40 +113,8 @@ namespace :warehouse do
                 end
             end    
 
-                Address.all.each do |address| 
-                    if address.customer_id == customer.id
-                    Building.all.each do |building| 
-                        if building.customer_id == customer.id
-                        Battery.all.each do |battery|
-                            if battery.building_id == building.id
-                            Column.all.each do |column|
-                                if column.battery_id == battery.id
-                                Elevator.all.each do |elevator|
-                                    if elevator.status == "Intervention"
-                                    Factintervention.create!(
-                                        employee_id: battery.employee_id,
-                                        building_id: building.id,
-                                        battery_id: battery.id,
-                                        column_id: column.id,
-                                        elevator_id: elevator.id,
-                                        intervention_started: elevator.updated_at,
-                                        intervention_ended: nil,
-                                        intervention_result: nil,
-                                        intervention_report: Faker::Books::Dune.quote,
-                                        intervention_status: "In Progress"
-                                    )
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
-end
 
-    end
+end
 
     task elevator_timer: :environment do
 

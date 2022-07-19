@@ -160,20 +160,6 @@ def random_battery_certificate
     return random_certificate_battery
 end
 
-def random_column_status
-    column_status_random = rand(3)
-    random_status_column = ""
-    if column_status_random == 0
-        random_status_column = "Online"
-    elsif column_status_random == 1
-        random_status_column = "Offline"
-    elsif column_status_random == 2
-        random_status_column = "In Maintenance"
-    end
-    return random_status_column
-end
-
-
 # def loopAddresses
     # for requiredAddress in addressList
     # end
@@ -5740,9 +5726,11 @@ addressList.each do |requiredAddress|
     
 
     buildings = Building.create!(
+        employee_id: rand(1..10),
         customer_id: customer[:id],
         # address = requiredAddress["address1"]
         # can be fake address
+        status: random_battery_status,
         building_admin_name: Faker::Name.name,
         building_admin_email: Faker::Internet.free_email,
         building_admin_phone: Faker::PhoneNumber.cell_phone,
@@ -5762,7 +5750,6 @@ addressList.each do |requiredAddress|
     )
 
     batteries = Battery.create!(
-        employee_id: rand(1..10),
         building_id: buildings[:id],
         building_type: random_building_type,
         battery_status: random_battery_status,
@@ -5779,7 +5766,7 @@ addressList.each do |requiredAddress|
     columns = Column.create!(
         battery_id: batteries[:id],
         number_of_floors_served: Faker::Number.between(from: 2, to: 90),
-        column_status: random_column_status,
+        column_status: random_elevator_status,
         info: Faker::Quote.famous_last_words,
         notes: Faker::Quote.matz,
         created_at: Faker::Date.between(from: '2002-02-20', to: '2018-09-25'),
@@ -5787,7 +5774,7 @@ addressList.each do |requiredAddress|
         # index_columns_on_battery_id
     )
 
-    3.times do
+    7.times do
     Elevator.create!(
         column_id: columns[:id],
         serial_number: Faker::IDNumber.chilean_id,
