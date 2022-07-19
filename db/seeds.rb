@@ -5728,6 +5728,7 @@ addressList.each do |requiredAddress|
     buildings = Building.create!(
         employee_id: rand(1..10),
         customer_id: customer[:id],
+        address: address[:street_address],
         # address = requiredAddress["address1"]
         # can be fake address
         status: random_battery_status,
