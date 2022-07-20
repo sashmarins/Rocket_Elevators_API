@@ -1,3 +1,5 @@
+LIVE WEBSITE ON dave-mustaine.com
+
 # README
 
 * Ruby version
