@@ -1,24 +1,11 @@
-
-#
 default: &default
   adapter: postgresql
-  encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: codeboxxmac
-  password:
+  encoding: unicode
+  username: codeboxx
+  password: Codeboxx1!
+  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
+  pool: 5
 
 development:
   <<: *default
-  database: postgres
-
-test:
-  <<: *default
-  database: postgres
-
-#
-production:
-  <<: *default
-  database: postgres
-  url: <%= ENV["DATABASE_PG_URL"] %>
-  username: codeboxxmac
-  password:
+  database: Sasha_Marinskiy
