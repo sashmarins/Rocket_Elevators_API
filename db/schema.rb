@@ -108,14 +108,13 @@ ActiveRecord::Schema.define(version: 2022_07_13_172103) do
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
     t.string "company_name"
-    t.integer "number_of_elevators"
     t.string "customer_created_date"
     t.string "contact_name"
     t.string "phone_number"
     t.string "email"
     t.text "company_description"
     t.string "service_tech_name"
-    t.integer "service_tech_phone"
+    t.string "service_tech_phone"
     t.string "service_tech_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

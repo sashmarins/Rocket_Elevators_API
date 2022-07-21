@@ -1,4 +1,8 @@
 RailsAdmin::Engine.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
   scope protocol: 'https://', constraints: {protocol: 'https://'} do
     resources :radmin
   end
@@ -7,6 +11,10 @@ RailsAdmin::Engine.routes.draw do
 end
 
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+  post "/graphql", to: "graphql#execute"
   # get 'errors/not_found'
   # get 'errors/internal_server_error~'
   match "/404", to: "errors#not_found", via: :all

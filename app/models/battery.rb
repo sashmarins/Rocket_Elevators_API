@@ -1,8 +1,9 @@
 class Battery < ApplicationRecord
     belongs_to :building
-    require './app/models/FactIntervention.rb'
+    require './app/models/fact_intervention.rb'
     after_create :check_battery_intervention
     after_update :check_battery_intervention 
+    before_update :finish_intervention_battery
 
     def check_battery_intervention
         Customer.all.each do |customer|
@@ -29,6 +30,14 @@ class Battery < ApplicationRecord
                 end
             end
 
-
+            def finish_intervention_battery
+                current_time = DateTime.now
+                result = ["Success", "Failure", "Incomplete"].sample(1)
+                FactIntervention.all.each do |intervention|
+                    if intervention.battery_id == self.id && intervention.intervention_ended == nil && self.battery_status != "Intervention"
+                        intervention.update(intervention_ended: current_time.strftime, intervention_status: "Intervened", intervention_result: result)
+                    end
+                end
+            end
 
 end

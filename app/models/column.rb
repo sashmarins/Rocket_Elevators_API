@@ -1,8 +1,9 @@
 class Column < ApplicationRecord
     belongs_to :battery
-    require './app/models/FactIntervention.rb'
+    require './app/models/fact_intervention.rb'
     after_create :check_column_intervention
     after_update :check_column_intervention 
+    before_update :finish_intervention_column
 
     def check_column_intervention
         Customer.all.each do |customer|
@@ -29,6 +30,16 @@ class Column < ApplicationRecord
                         end
                     end
                 end
+            end
+        end
+    end
+
+    def finish_intervention_column
+        current_time = DateTime.now
+        result = ["Success", "Failure", "Incomplete"].sample(1)
+        FactIntervention.all.each do |intervention|
+            if intervention.column_id == self.id && intervention.intervention_ended == nil && self.column_status != "Intervention"
+                intervention.update(intervention_ended: current_time.strftime, intervention_status: "Intervened", intervention_result: result)
             end
         end
     end
