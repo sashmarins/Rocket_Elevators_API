@@ -32,4 +32,5 @@
 # Ignore application configuration
 /config/application.yml
 sendgrid.env
+/config/database_pg.yml
 
