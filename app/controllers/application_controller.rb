@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
     flash[:error] = 'Access denied!'
     redirect_to root_path
       end
-      protect_from_forgery with: :exception
+
+      protect_from_forgery prepend: true  
 
      before_action :configure_permitted_parameters, if: :devise_controller?
 

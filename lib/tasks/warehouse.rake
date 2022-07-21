@@ -2,7 +2,7 @@ require './app/models/FactQuote.rb'
 require './app/models/FactContact.rb'
 require './app/models/FactElevator.rb'
 require './app/models/DimCustomer.rb'
-require './app/models/FactIntervention.rb'
+require './app/models/fact_intervention.rb'
 require 'http'
 
 def every_so_many_seconds(seconds)
@@ -106,7 +106,7 @@ namespace :warehouse do
                                 company_name: customer.company_name,
                                 company_contact_name: customer.contact_name,
                                 email: customer.email,
-                                NbElevators: customer.number_of_elevators,
+                                # NbElevators: customer.number_of_elevators,
                                 customer_city: address.city
                             )
                         end
